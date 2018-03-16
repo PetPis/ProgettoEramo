@@ -66,10 +66,6 @@ public class Login extends JFrame {
 		textPane_1.setBounds(282, 135, 108, 20);
 		contentPane.add(textPane_1);
 		
-		btnLogin.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		btnLogin.setBounds(89, 277, 89, 23);
-		contentPane.add(btnLogin);
-		
 		JButton btnSignup = new JButton("Sign-Up");
 		btnSignup.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
 		btnSignup.setBounds(301, 311, 89, 23);
