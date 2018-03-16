@@ -59,7 +59,7 @@ public class Login extends JFrame {
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblPassword.setBounds(107, 187, 71, 13);
+		lblPassword.setBounds(107, 192, 71, 13);
 		contentPane.add(lblPassword);
 		
 		JTextPane textPane_1 = new JTextPane();
