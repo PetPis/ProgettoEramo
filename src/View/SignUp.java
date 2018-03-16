@@ -11,6 +11,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class SignUp extends JFrame {
 
@@ -46,67 +49,77 @@ public class SignUp extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTextPane txtpnName = new JTextPane();
-		txtpnName.setBounds(296, 45, 108, 16);
+		txtpnName.setBounds(227, 70, 232, 16);
 		contentPane.add(txtpnName);
 		
 		JLabel lblName = new JLabel("Name");
 		lblName.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblName.setBounds(118, 45, 61, 16);
+		lblName.setBounds(67, 70, 61, 16);
 		contentPane.add(lblName);
 		
 		JLabel lblSurname = new JLabel("Surname");
 		lblSurname.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblSurname.setBounds(118, 87, 61, 16);
+		lblSurname.setBounds(67, 112, 61, 16);
 		contentPane.add(lblSurname);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblPassword.setBounds(118, 178, 61, 22);
+		lblPassword.setBounds(67, 197, 61, 22);
 		contentPane.add(lblPassword);
 		
 		JLabel lblEmail = new JLabel("E-mail");
 		lblEmail.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblEmail.setBounds(118, 256, 61, 16);
+		lblEmail.setBounds(67, 276, 61, 16);
 		contentPane.add(lblEmail);
 		
 		JLabel lblConfermaPassword = new JLabel("Conferma Password");
 		lblConfermaPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblConfermaPassword.setBounds(118, 215, 135, 16);
+		lblConfermaPassword.setBounds(67, 231, 135, 16);
 		contentPane.add(lblConfermaPassword);
 		
 		JTextPane txtpnCcccc = new JTextPane();
-		txtpnCcccc.setBounds(296, 87, 108, 16);
+		txtpnCcccc.setBounds(227, 112, 232, 16);
 		contentPane.add(txtpnCcccc);
 		
 		JTextPane textPane_2 = new JTextPane();
-		textPane_2.setBounds(296, 256, 108, 16);
+		textPane_2.setBounds(227, 276, 232, 16);
 		contentPane.add(textPane_2);
 		
 		JButton btnCancell = new JButton("Cancel");
 		btnCancell.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		btnCancell.setBounds(107, 326, 117, 29);
+		btnCancell.setBounds(229, 326, 100, 29);
 		contentPane.add(btnCancell);
 		
 		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnConfirm.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		btnConfirm.setBounds(296, 326, 117, 29);
+		btnConfirm.setBounds(359, 326, 100, 29);
 		contentPane.add(btnConfirm);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(296, 177, 108, 26);
+		passwordField.setBounds(227, 196, 232, 26);
 		contentPane.add(passwordField);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(296, 211, 108, 26);
+		passwordField_1.setBounds(227, 227, 232, 26);
 		contentPane.add(passwordField_1);
 		
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblUsername.setBounds(116, 136, 92, 16);
+		lblUsername.setBounds(67, 156, 92, 16);
 		contentPane.add(lblUsername);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(296, 136, 108, 16);
+		textPane.setBounds(227, 156, 232, 16);
 		contentPane.add(textPane);
+		
+		JLabel lblRegistrazione = new JLabel("Registrazione");
+		lblRegistrazione.setForeground(new Color(204, 0, 0));
+		lblRegistrazione.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+		lblRegistrazione.setBounds(194, 6, 135, 28);
+		contentPane.add(lblRegistrazione);
 	}
 }
