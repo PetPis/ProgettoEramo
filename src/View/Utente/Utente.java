@@ -1,4 +1,4 @@
-package View;
+package View.Utente;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

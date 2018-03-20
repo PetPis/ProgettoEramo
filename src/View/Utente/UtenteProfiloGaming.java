@@ -1,4 +1,4 @@
-package View;
+package View.Utente;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -71,7 +71,7 @@ public class UtenteProfiloGaming extends JFrame {
 		lblTrofei.setBounds(10, 175, 114, 14);
 		contentPane.add(lblTrofei);
 		
-		JLabel label_1 = new JLabel("<dynamyc>");
+		JLabel label_1 = new JLabel(utente.getUsername());
 		label_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 13));
 		label_1.setBounds(134, 78, 114, 14);
 		contentPane.add(label_1);

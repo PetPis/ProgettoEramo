@@ -78,7 +78,7 @@ public class LogIn extends JFrame {
 		JLabel lblPiattaformaGaming = new JLabel("Piattaforma Gaming");
 		lblPiattaformaGaming.setForeground(Color.RED);
 		lblPiattaformaGaming.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPiattaformaGaming.setBounds(174, 33, 189, 28);
+		lblPiattaformaGaming.setBounds(174, 33, 200, 28);
 		contentPane.add(lblPiattaformaGaming);
 	}
 }

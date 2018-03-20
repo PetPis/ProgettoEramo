@@ -74,7 +74,7 @@ public class SignUp extends JFrame {
 		
 		JLabel lblConfermaPassword = new JLabel("Conferma Password");
 		lblConfermaPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblConfermaPassword.setBounds(67, 231, 135, 16);
+		lblConfermaPassword.setBounds(67, 230, 135, 16);
 		contentPane.add(lblConfermaPassword);
 		
 		JTextPane txtpnCcccc = new JTextPane();
@@ -100,11 +100,11 @@ public class SignUp extends JFrame {
 		contentPane.add(btnConfirm);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(227, 196, 232, 26);
+		passwordField.setBounds(227, 196, 232, 16);
 		contentPane.add(passwordField);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(227, 227, 232, 26);
+		passwordField_1.setBounds(227, 232, 232, 16);
 		contentPane.add(passwordField_1);
 		
 		JLabel lblUsername = new JLabel("Username");
