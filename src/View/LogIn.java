@@ -12,6 +12,7 @@ import javax.swing.JTextPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Component;
 
 public class LogIn extends JFrame {
 
@@ -38,10 +39,10 @@ public class LogIn extends JFrame {
 	 * Create the frame.
 	 */
 	public LogIn() {
-		setTitle("Log In");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 526, 410);
+		setBounds(100, 100, 525, 410);
 		contentPane = new JPanel();
+		contentPane.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -75,8 +76,8 @@ public class LogIn extends JFrame {
 		contentPane.add(btnSignup);
 		
 		JLabel lblPiattaformaGaming = new JLabel("Piattaforma Gaming");
-		lblPiattaformaGaming.setForeground(new Color(204, 0, 0));
-		lblPiattaformaGaming.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+		lblPiattaformaGaming.setForeground(Color.RED);
+		lblPiattaformaGaming.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		lblPiattaformaGaming.setBounds(174, 33, 189, 28);
 		contentPane.add(lblPiattaformaGaming);
 	}

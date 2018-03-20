@@ -117,8 +117,8 @@ public class SignUp extends JFrame {
 		contentPane.add(textPane);
 		
 		JLabel lblRegistrazione = new JLabel("Registrazione");
-		lblRegistrazione.setForeground(new Color(204, 0, 0));
-		lblRegistrazione.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+		lblRegistrazione.setForeground(Color.RED);
+		lblRegistrazione.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		lblRegistrazione.setBounds(194, 6, 135, 28);
 		contentPane.add(lblRegistrazione);
 	}
