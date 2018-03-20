@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import src.controller.UtenteController;
+import Controller.UtenteController;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import java.awt.Component;
+import javax.swing.SwingConstants;
 
 public class UtenteProfiloGaming extends JFrame {
 
@@ -53,25 +54,25 @@ public class UtenteProfiloGaming extends JFrame {
 		
 		JLabel label = new JLabel("Username:");
 		label.setFont(new Font("Consolas", Font.PLAIN, 13));
-		label.setBounds(10, 78, 114, 14);
+		label.setBounds(45, 78, 114, 14);
 		contentPane.add(label);
 		
 		JLabel lblExp = new JLabel("Punti Exp:");
 		lblExp.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblExp.setBounds(10, 139, 114, 14);
+		lblExp.setBounds(45, 139, 114, 14);
 		contentPane.add(lblExp);
 		
 		JLabel lblLivello = new JLabel("Livello:");
 		lblLivello.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblLivello.setBounds(10, 103, 114, 14);
+		lblLivello.setBounds(45, 103, 114, 14);
 		contentPane.add(lblLivello);
 		
 		JLabel lblTrofei = new JLabel("Trofei:");
 		lblTrofei.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblTrofei.setBounds(10, 175, 114, 14);
+		lblTrofei.setBounds(45, 170, 114, 14);
 		contentPane.add(lblTrofei);
 		
-		JLabel label_1 = new JLabel(utente.getUsername());
+		JLabel label_1 = new JLabel(Utente.getUsername());
 		label_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 13));
 		label_1.setBounds(134, 78, 114, 14);
 		contentPane.add(label_1);
@@ -85,9 +86,10 @@ public class UtenteProfiloGaming extends JFrame {
 		contentPane.add(label_3);
 		
 		JLabel gaming = new JLabel("Profilo Gaming");
+		gaming.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		gaming.setForeground(Color.RED);
 		gaming.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		gaming.setBounds(170, 11, 155, 30);
+		gaming.setBounds(184, 11, 155, 30);
 		contentPane.add(gaming);
 		
 		JButton btnVisualizzaTrofei = new JButton("Visualizza Trofei");
@@ -97,7 +99,7 @@ public class UtenteProfiloGaming extends JFrame {
 		
 		JLabel lblTimeline = new JLabel("Timeline:");
 		lblTimeline.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		lblTimeline.setBounds(10, 217, 114, 14);
+		lblTimeline.setBounds(45, 218, 114, 14);
 		contentPane.add(lblTimeline);
 		
 		TreeMap<Integer,String> timeline = new UtenteController().timeline(utente.getUsername());
@@ -118,8 +120,9 @@ public class UtenteProfiloGaming extends JFrame {
 		contentPane.add(scroll);
 		
 		JButton btnHome = new JButton("Home");
+		btnHome.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnHome.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		btnHome.setBounds(411, 338, 89, 23);
+		btnHome.setBounds(365, 338, 89, 23);
 		contentPane.add(btnHome);
 	}
 }
