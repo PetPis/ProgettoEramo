@@ -15,7 +15,7 @@ import java.sql.Statement;
  *
  * @author Marco
  */
-public class DBdemo {
+public class DB {
 
     public static void main(String[]args) {
         Connection conn = null;
