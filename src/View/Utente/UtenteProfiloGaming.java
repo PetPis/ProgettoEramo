@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Controller.UtenteController;
+//import Controller.UtenteController;
+import Model.Utente;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -24,6 +25,7 @@ import javax.swing.SwingConstants;
 public class UtenteProfiloGaming extends JFrame {
 
 	private JPanel contentPane;
+        private Utente utente;
 
 	/**
 	 * Launch the application.
@@ -72,7 +74,7 @@ public class UtenteProfiloGaming extends JFrame {
 		lblTrofei.setBounds(45, 170, 114, 14);
 		contentPane.add(lblTrofei);
 		
-		JLabel label_1 = new JLabel(Utente.getUsername());
+		JLabel label_1 = new JLabel(utente.getUsername());
 		label_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 13));
 		label_1.setBounds(134, 78, 114, 14);
 		contentPane.add(label_1);
