@@ -77,7 +77,6 @@
     <Component class="javax.swing.JButton" name="ProfiloGame">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lista Giochi"/>
-        <Property name="actionCommand" type="java.lang.String" value="Lista Giochi"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="GoToGames">

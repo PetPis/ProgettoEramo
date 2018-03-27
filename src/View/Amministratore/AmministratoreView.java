@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View.Utente;
+package View.Amministratore;
 
 /**
  *
  * @author Marco
  */
-public class UtenteView extends javax.swing.JPanel {
+public class AmministratoreView extends javax.swing.JPanel {
 
     /**
      * Creates new form Utente
      */
-    public UtenteView() {
+    public AmministratoreView() {
         initComponents();
     }
 
