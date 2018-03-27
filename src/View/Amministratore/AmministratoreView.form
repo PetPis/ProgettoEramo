@@ -38,16 +38,16 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="Welcome" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="Welcome" min="-2" pref="34" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Component id="ProfiloPers" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="ProfiloGame" min="-2" max="-2" attributes="0"/>
@@ -66,7 +66,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="20" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Benvenuto &lt;dynamic&gt;"/>
+        <Property name="text" type="java.lang.String" value="Benvenuto &lt;dynamic&gt; [A]"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="ProfiloPers">
@@ -76,12 +76,13 @@
     </Component>
     <Component class="javax.swing.JButton" name="ProfiloGame">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Profilo Gaming"/>
+        <Property name="text" type="java.lang.String" value="Lista Giochi"/>
+        <Property name="actionCommand" type="java.lang.String" value="Lista Giochi"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="GoToGames">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vai ai Giochi!"/>
+        <Property name="text" type="java.lang.String" value="Lista Utenti"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Exit">
