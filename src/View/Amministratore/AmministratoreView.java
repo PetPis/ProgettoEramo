@@ -34,13 +34,14 @@ public class UtenteView extends javax.swing.JPanel {
         Exit = new javax.swing.JButton();
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        Welcome.setText("Benvenuto <dynamic>");
+        Welcome.setText("Benvenuto <dynamic> [A]");
 
         ProfiloPers.setText("Profilo Personale");
 
-        ProfiloGame.setText("Profilo Gaming");
+        ProfiloGame.setText("Lista Giochi");
+        ProfiloGame.setActionCommand("Lista Giochi");
 
-        GoToGames.setText("Vai ai Giochi!");
+        GoToGames.setText("Lista Utenti");
 
         Exit.setText("Esci");
 
@@ -64,14 +65,14 @@ public class UtenteView extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Welcome)
-                .addGap(158, 158, 158))
+                .addGap(137, 137, 137))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(30, 30, 30)
                 .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(79, 79, 79)
                 .addComponent(ProfiloPers)
                 .addGap(18, 18, 18)
                 .addComponent(ProfiloGame)
