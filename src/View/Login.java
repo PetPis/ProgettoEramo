@@ -46,28 +46,13 @@ public class Login extends javax.swing.JPanel {
 
         Accedi.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Accedi.setText("Accedi");
-        Accedi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccediActionPerformed(evt);
-            }
-        });
 
         Registrati.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Registrati.setText("Registrati");
 
         PasswordText.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        PasswordText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordTextActionPerformed(evt);
-            }
-        });
 
         UsernameText.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        UsernameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameTextActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -118,18 +103,6 @@ public class Login extends javax.swing.JPanel {
                 .addGap(54, 54, 54))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AccediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccediActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AccediActionPerformed
-
-    private void PasswordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordTextActionPerformed
-
-    private void UsernameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameTextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

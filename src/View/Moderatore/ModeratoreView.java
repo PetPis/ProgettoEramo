@@ -43,43 +43,18 @@ public class ModeratoreView extends javax.swing.JPanel {
 
         btnProfGaming.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnProfGaming.setText("Profilo Gaming");
-        btnProfGaming.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfGamingActionPerformed(evt);
-            }
-        });
 
         btnVaiGiochi.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnVaiGiochi.setText("Vai ai Giochi");
-        btnVaiGiochi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVaiGiochiActionPerformed(evt);
-            }
-        });
 
         btnListaUtenti.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnListaUtenti.setText("Lista Utenti");
-        btnListaUtenti.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListaUtentiActionPerformed(evt);
-            }
-        });
 
         btnListaRecens.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnListaRecens.setText("Lista recensioni");
-        btnListaRecens.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListaRecensActionPerformed(evt);
-            }
-        });
 
         btnEsci.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnEsci.setText("Esci");
-        btnEsci.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEsciActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,20 +69,17 @@ public class ModeratoreView extends javax.swing.JPanel {
                         .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnProfGaming, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnListaRecens, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnProfPers)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnListaUtenti, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnProfPers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnVaiGiochi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnVaiGiochi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnProfGaming, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addComponent(btnEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnListaUtenti, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                    .addComponent(btnListaRecens, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEsci, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,26 +102,6 @@ public class ModeratoreView extends javax.swing.JPanel {
                 .addContainerGap(68, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnProfGamingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfGamingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProfGamingActionPerformed
-
-    private void btnVaiGiochiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaiGiochiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVaiGiochiActionPerformed
-
-    private void btnListaUtentiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaUtentiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnListaUtentiActionPerformed
-
-    private void btnListaRecensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaRecensActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnListaRecensActionPerformed
-
-    private void btnEsciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsciActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEsciActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

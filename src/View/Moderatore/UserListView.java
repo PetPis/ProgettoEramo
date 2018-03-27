@@ -9,12 +9,12 @@ package View.Moderatore;
  *
  * @author davidepetrini
  */
-public class ModeratoreViewLU extends javax.swing.JPanel {
+public class UserListView extends javax.swing.JPanel {
 
     /**
      * Creates new form ModeratoreViewLU
      */
-    public ModeratoreViewLU() {
+    public UserListView() {
         initComponents();
     }
 
