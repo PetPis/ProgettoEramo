@@ -11,6 +11,10 @@ import Model.DAO.Interfaces.GiocoDaoInterface;
 import Model.Database.DB;
 import Model.*;
 
+
+/*
+*Class which contains all queries to get game's informations from database
+*/
 public class GiocoDao implements GiocoDaoInterface{
     
     private static final String
