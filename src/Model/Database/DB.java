@@ -24,7 +24,7 @@ public class DB {
             return connection;
         } 
          catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
         } 
         catch (Exception ex){
             System.err.println("Impossibile salvare/caricare i dati! Il database non risponde!");
