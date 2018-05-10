@@ -21,7 +21,7 @@ public class GiocoDao implements GiocoDaoInterface{
     INSERT = "INSERT INTO gioco(nome, exp) VALUES (?, ?);";
     
     private static final String
-    DELETE = "DELETE FROM gioco WHERE idGioco = ?;";
+    DELETE = "DELETE FROM gioco WHERE id = ?;";
 
     private static final String
     ALL = "SELECT * FROM gioco ORDER BY nome;";
@@ -33,7 +33,7 @@ public class GiocoDao implements GiocoDaoInterface{
     FIND_BY_NAME = "SELECT * FROM gioco WHERE nome = ?;";
 
     private static final String
-    VOTES_AVERAGE = "SELECT AVG(valutazione) AS average FROM gioco JOIN recensione ON gioco.idGioco = voto.gioco WHERE idGioco = ?;";
+    VOTES_AVERAGE = "SELECT AVG(votazione) AS average FROM gioco JOIN voto ON gioco.id = voto.gioco WHERE id = ?;";
 
     private static final String
     ALL_GAME_REVIEWS = "SELECT * FROM recensione WHERE recensione.gioco = ? AND recensione.approvazione = 1;";

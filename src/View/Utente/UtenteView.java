@@ -1,22 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package View.Utente;
 
-import Model.Utente;
-import javax.swing.JFrame;
-
+/**
+ *
+ * @author Marco
+ */
 public class UtenteView extends javax.swing.JPanel {
 
-    private JFrame frmPiattaformaGaming;
-    Utente utente;
-
     /**
-     * Class constructor
-     *
-     * @param frame initial frame
-     * @param utente current user
+     * Creates new form Utente
      */
-    public UtenteView(JFrame frame, Utente utente) {
-        this.frmPiattaformaGaming = frame;
-        this.utente = utente;
+    public UtenteView() {
         initComponents();
     }
 
