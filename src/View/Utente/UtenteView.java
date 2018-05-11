@@ -79,7 +79,7 @@ public class UtenteView extends javax.swing.JPanel {
                 .addComponent(GoToGames)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Exit)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
