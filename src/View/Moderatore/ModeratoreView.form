@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,119 +23,150 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnProfPers" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnListaUtenti" min="-2" pref="167" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="btnVaiGiochi" max="32767" attributes="0"/>
-                                  <Component id="btnProfGaming" pref="167" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnListaRecens" min="-2" pref="167" max="-2" attributes="0"/>
-                                  <Component id="btnEsci" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
+          <EmptySpace min="0" pref="525" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnListaUtenti" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnProfPers" alignment="3" min="-2" max="-2" attributes="0"/>
+          <EmptySpace min="0" pref="410" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnListaRecens" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnProfGaming" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnEsci" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVaiGiochi" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="20" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Benvenuto &lt;dinamic&gt; [M]"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnProfPers">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Profilo Personale"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnProfGaming">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Profilo Gaming"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnVaiGiochi">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Vai ai Giochi"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnListaUtenti">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Lista Utenti"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnListaRecens">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Lista recensioni"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnEsci">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Esci"/>
-      </Properties>
-    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnProfPers" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnListaUtenti" min="-2" pref="167" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="btnVaiGiochi" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="btnProfGaming" alignment="1" pref="167" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnListaRecens" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <Component id="btnEsci" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnListaUtenti" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnProfPers" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnListaRecens" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnProfGaming" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnEsci" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnVaiGiochi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="20" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Benvenuto &lt;dinamic&gt; [M]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnProfPers">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Profilo Personale"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnProfGaming">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Profilo Gaming"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnVaiGiochi">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Vai ai Giochi"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnListaUtenti">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lista Utenti"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnListaRecens">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lista recensioni"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEsci">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="16" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Esci"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
