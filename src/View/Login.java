@@ -5,18 +5,24 @@
  */
 package View;
 
-import javax.swing.JFrame;
+import Controller.GestioneUtenza;
+import Model.Utente;
+import View.Amministratore.AmministratoreViews;
+import View.Moderatore.ModeratoreView;
+import View.Utente.UtenteView;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Marco
  */
 public class Login extends javax.swing.JFrame {
-    private static JFrame PiattaformaGaming;
+
     /**
      * Creates new form Login
      */
     public Login() {
+
         initComponents();
     }
 
@@ -38,6 +44,8 @@ public class Login extends javax.swing.JFrame {
         registrati = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gaming");
+        setName("Gaming"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         jLabel1.setText("Gaming Platform");
@@ -47,11 +55,16 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         jButton1.setText("Accedi");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         registrati.setText("Registrati");
-        registrati.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registratiActionPerformed(evt);
+        registrati.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registrati(evt);
             }
         });
 
@@ -98,9 +111,30 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void registratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registratiActionPerformed
-        new SignUp();
-    }//GEN-LAST:event_registratiActionPerformed
+    private void registrati(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrati
+        new SignUp().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_registrati
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Utente utente = new GestioneUtenza().logIn(jTextField1.getText(), new String(jPasswordField1.getPassword()));
+        if (utente == null) {
+            JOptionPane.showMessageDialog(rootPane, "Username o Password Errati. Ritenta.", "Login Error", JOptionPane.ERROR_MESSAGE);
+            jTextField1.setText("");
+            jPasswordField1.setText("");
+        } else {
+            this.setVisible(false);
+            if (utente.getTipo().equals("utente")) {
+                new UtenteView().setVisible(true);
+            }
+            if (utente.getTipo().equals("moderatore")) {
+                new ModeratoreView().setVisible(true);
+            }
+            if (utente.getTipo().equals("amministratore")) {
+                new AmministratoreViews().setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
