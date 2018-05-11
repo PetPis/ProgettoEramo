@@ -5,14 +5,22 @@
  */
 package View;
 
+import Controller.GestioneUtenza;
+import Model.Utente;
+import View.Amministratore.AmministratoreView;
+import View.Moderatore.ModeratoreView;
+import View.Utente.UtenteView;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Marco
  */
 public class Login extends javax.swing.JFrame {
+
     private static JFrame PiattaformaGaming;
+
     /**
      * Creates new form Login
      */
@@ -47,6 +55,11 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         jButton1.setText("Accedi");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         registrati.setText("Registrati");
         registrati.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +114,26 @@ public class Login extends javax.swing.JFrame {
     private void registratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registratiActionPerformed
         new SignUp();
     }//GEN-LAST:event_registratiActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Utente utente = new GestioneUtenza().logIn(jTextField1.getText(), new String(jPasswordField1.getPassword()));
+        if (utente == null) {
+            JOptionPane.showMessageDialog(rootPane, "Username o password errati", "Login error", JOptionPane.ERROR_MESSAGE);
+            jTextField1.setText("");
+            jPasswordField1.setText("");
+        } else {
+            this.setVisible(false);
+            if (utente.getTipo().equals("utente")) {
+                new UtenteView();
+            }
+            if (utente.getTipo().equals("moderatore")) {
+                new ModeratoreView();
+            }
+            if (utente.getTipo().equals("amministratore")) {
+                new AmministratoreView();
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
