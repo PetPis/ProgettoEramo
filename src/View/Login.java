@@ -112,7 +112,8 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registratiActionPerformed
-        new SignUp();
+        new SignUp().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_registratiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -124,13 +125,13 @@ public class Login extends javax.swing.JFrame {
         } else {
             this.setVisible(false);
             if (utente.getTipo().equals("utente")) {
-                new UtenteView();
+                new UtenteView().setVisible(true);
             }
             if (utente.getTipo().equals("moderatore")) {
-                new ModeratoreView();
+                new ModeratoreView().setVisible(true);
             }
             if (utente.getTipo().equals("amministratore")) {
-                new AmministratoreView();
+                new AmministratoreView().setVisible(true);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
