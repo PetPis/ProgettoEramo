@@ -133,7 +133,7 @@ public class UtenteView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        Welcome.setText("Benvenuto <dynamic>");
+        Welcome.setText("Benvenuto " + utente.getNome());
 
         ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         ProfiloPers.setText("Profilo Personale");
