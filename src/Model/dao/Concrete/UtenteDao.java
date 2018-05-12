@@ -454,7 +454,7 @@ public class UtenteDao implements UtenteDaoInterface {
         PreparedStatement ps = connection.prepareStatement(QUERY);
         ps.setString(1, email_or_username);
         ResultSet rset = ps.executeQuery();
-        rset.first();
+        rset.next();
         if (rset.getInt(1) == 1) {
             username_or_email_used = true;
         }
