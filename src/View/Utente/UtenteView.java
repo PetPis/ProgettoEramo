@@ -7,7 +7,6 @@ package View.Utente;
 
 import Model.Utente;
 import View.Login;
-import View.gioco.GiocoView;
 
 public class UtenteView extends javax.swing.JFrame {
        private Utente utente;
@@ -254,7 +253,7 @@ public class UtenteView extends javax.swing.JFrame {
 
     private void GoToGamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToGamesActionPerformed
         this.setVisible(false);
-        new GiocoView().setVisible(true);
+        new GameListUtente().setVisible(true);
     }//GEN-LAST:event_GoToGamesActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed

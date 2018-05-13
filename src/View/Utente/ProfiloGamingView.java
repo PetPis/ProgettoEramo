@@ -7,16 +7,19 @@ package View.Utente;
 
 import Controller.UtenteController;
 import Model.Utente;
+import View.gioco.GiocoView;
 import java.awt.Color;
 import java.util.Map;
 import java.util.TreeMap;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class ProfiloGamingView extends javax.swing.JFrame {
 
     private Utente utente;
+    
 
     /**
      * Creates new form ProfiloGamingView
@@ -72,6 +75,11 @@ public class ProfiloGamingView extends javax.swing.JFrame {
 
         TrofeiView.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         TrofeiView.setText("Visualizza Trofei");
+        TrofeiView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrofeiViewActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setHorizontalScrollBar(null);
 
@@ -242,6 +250,11 @@ public class ProfiloGamingView extends javax.swing.JFrame {
 
         TrofeiView.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         TrofeiView.setText("Visualizza Trofei");
+        TrofeiView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrofeiViewActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setHorizontalScrollBar(null);
 
@@ -364,6 +377,16 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         this.setVisible(false);
         new UtenteView(utente).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TrofeiViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrofeiViewActionPerformed
+        if (utente.getLivello() < 1) {
+            JOptionPane.showMessageDialog(rootPane, "Non hai ancora collezionato trofei!", "No trofei", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            this.setVisible(false);
+            new TrofeiView(utente).setVisible(true);
+        }
+    }//GEN-LAST:event_TrofeiViewActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel GetExp;
