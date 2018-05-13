@@ -6,16 +6,18 @@
 package View.Utente;
 
 import Model.Utente;
+import View.Login;
+import View.gioco.GiocoView;
 
 public class UtenteView extends javax.swing.JFrame {
-    final Utente utente;
+       private Utente utente;
 
     /**
      * Creates new form UtenteView
      */
     public UtenteView(Utente utente) {
         this.utente = utente;
-        initComps();
+        InitComps();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,12 +50,27 @@ public class UtenteView extends javax.swing.JFrame {
 
         ProfiloGame.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         ProfiloGame.setText("Profilo Gaming");
+        ProfiloGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfiloGameActionPerformed(evt);
+            }
+        });
 
         GoToGames.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         GoToGames.setText("Vai ai Giochi!");
+        GoToGames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoToGamesActionPerformed(evt);
+            }
+        });
 
         Exit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Exit.setText("Esci");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,9 +133,9 @@ public class UtenteView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void initComps(){
-        jPanel1 = new javax.swing.JPanel();
+   
+    private void InitComps(){
+         jPanel1 = new javax.swing.JPanel();
         Welcome = new javax.swing.JLabel();
         ProfiloPers = new javax.swing.JButton();
         ProfiloGame = new javax.swing.JButton();
@@ -140,12 +157,27 @@ public class UtenteView extends javax.swing.JFrame {
 
         ProfiloGame.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         ProfiloGame.setText("Profilo Gaming");
+        ProfiloGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfiloGameActionPerformed(evt);
+            }
+        });
 
         GoToGames.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         GoToGames.setText("Vai ai Giochi!");
+        GoToGames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoToGamesActionPerformed(evt);
+            }
+        });
 
         Exit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Exit.setText("Esci");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,6 +246,21 @@ public class UtenteView extends javax.swing.JFrame {
         new ProfiloPersonaleView(utente).setVisible(true);
         
     }//GEN-LAST:event_ProfiloPersActionPerformed
+
+    private void ProfiloGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfiloGameActionPerformed
+        this.setVisible(false);
+        new ProfiloGamingView(utente).setVisible(true);
+    }//GEN-LAST:event_ProfiloGameActionPerformed
+
+    private void GoToGamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToGamesActionPerformed
+        this.setVisible(false);
+        new GiocoView().setVisible(true);
+    }//GEN-LAST:event_GoToGamesActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+       this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_ExitActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;

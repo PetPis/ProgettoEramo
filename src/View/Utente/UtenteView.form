@@ -123,6 +123,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Profilo Gaming"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProfiloGameActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="GoToGames">
           <Properties>
@@ -131,6 +134,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Vai ai Giochi!"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GoToGamesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Exit">
           <Properties>
@@ -139,6 +145,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Esci"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

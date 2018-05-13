@@ -374,7 +374,7 @@ public class UtenteDao implements UtenteDaoInterface {
         ps.setInt(1, utente.getId());
         ResultSet rset = ps.executeQuery();
         while (rset.next()) {
-            timeline.put(rset.getInt(2), rset.getDate(1).toString());
+            timeline.put(rset.getInt(3), rset.getString(4));
         }
         ps.close();
         rset.close();
