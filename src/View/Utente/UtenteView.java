@@ -37,10 +37,10 @@ public class UtenteView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        Welcome.setText("Benvenuto <dynamic>");
+        Welcome.setText("Welcome <Dynamic>");
 
         ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        ProfiloPers.setText("Profilo Personale");
+        ProfiloPers.setText("User Settings");
         ProfiloPers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfiloPersActionPerformed(evt);
@@ -48,7 +48,7 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         ProfiloGame.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        ProfiloGame.setText("Profilo Gaming");
+        ProfiloGame.setText("Gaming Profile");
         ProfiloGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfiloGameActionPerformed(evt);
@@ -56,7 +56,8 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         GoToGames.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        GoToGames.setText("Vai ai Giochi!");
+        GoToGames.setText("Games List");
+        GoToGames.setToolTipText("");
         GoToGames.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoToGamesActionPerformed(evt);
@@ -64,7 +65,7 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         Exit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        Exit.setText("Esci");
+        Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -91,7 +92,7 @@ public class UtenteView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Welcome)
-                .addGap(158, 158, 158))
+                .addGap(162, 162, 162))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,10 +145,10 @@ public class UtenteView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        Welcome.setText("Benvenuto " + utente.getNome());
+        Welcome.setText("Welcome " + utente.getNome());
 
         ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        ProfiloPers.setText("Profilo Personale");
+        ProfiloPers.setText("User Settings");
         ProfiloPers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfiloPersActionPerformed(evt);
@@ -155,7 +156,7 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         ProfiloGame.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        ProfiloGame.setText("Profilo Gaming");
+        ProfiloGame.setText("Gaming Profile");
         ProfiloGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfiloGameActionPerformed(evt);
@@ -163,7 +164,7 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         GoToGames.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        GoToGames.setText("Vai ai Giochi!");
+        GoToGames.setText("Games List!");
         GoToGames.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoToGamesActionPerformed(evt);
@@ -171,7 +172,7 @@ public class UtenteView extends javax.swing.JFrame {
         });
 
         Exit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        Exit.setText("Esci");
+        Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -253,7 +254,7 @@ public class UtenteView extends javax.swing.JFrame {
 
     private void GoToGamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToGamesActionPerformed
         this.setVisible(false);
-        new GameListUtente().setVisible(true);
+        new GameListUtente(utente).setVisible(true);
     }//GEN-LAST:event_GoToGamesActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed

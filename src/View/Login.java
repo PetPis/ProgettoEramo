@@ -46,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         registrati = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Piattaforma Gaming");
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         jLabel1.setText("Gaming Platform");
@@ -57,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jButton1.setText("Accedi");
+        jButton1.setText("Log In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -65,7 +66,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         registrati.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        registrati.setText("Registrati");
+        registrati.setText("Register");
         registrati.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registratiActionPerformed(evt);

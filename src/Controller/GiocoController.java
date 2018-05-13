@@ -85,4 +85,13 @@ public class GiocoController {
         }
         return null;
     }
+    
+    public int NumberOfGames(){
+        try{
+            return new GiocoDao().GetNumberOfGames();
+        }catch(SQLException exc){
+            exc.printStackTrace();
+        }
+        return -1;
+    }
 }

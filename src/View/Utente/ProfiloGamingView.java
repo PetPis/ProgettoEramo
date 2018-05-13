@@ -56,25 +56,25 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setText("Profilo Gaming");
+        jLabel1.setText("Gaming Profile");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel2.setText("Username:");
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel3.setText("Livello:");
+        jLabel3.setText("Level:");
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel4.setText("Punti Exp:");
+        jLabel4.setText("Exp :");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel5.setText("Trofei:");
+        jLabel5.setText("Trophies : ");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel6.setText("Timeline:");
 
         TrofeiView.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        TrofeiView.setText("Visualizza Trofei");
+        TrofeiView.setText("View Trophies");
         TrofeiView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TrofeiViewActionPerformed(evt);
@@ -231,25 +231,25 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         }
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setText("Profilo Gaming");
+        jLabel1.setText("Gaming Profile");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel2.setText("Username:");
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel3.setText("Livello:");
+        jLabel3.setText("Level:");
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel4.setText("Punti Exp:");
+        jLabel4.setText("Exp:");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel5.setText("Trofei:");
+        jLabel5.setText("Trophies:");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel6.setText("Timeline:");
 
         TrofeiView.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        TrofeiView.setText("Visualizza Trofei");
+        TrofeiView.setText("View Trophies");
         TrofeiView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TrofeiViewActionPerformed(evt);
@@ -260,7 +260,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
 
         TreeMap<Integer, String> Timeline = new UtenteController().timeline(utente.getUsername());
 
-        String[] column_names = {"Data", "Livello"};
+        String[] column_names = {"Date", "Level"};
         Object[][] timeline = new Object[Timeline.size()][2];
         int count = 0;
         for (Map.Entry<Integer, String> entry : Timeline.entrySet()) {

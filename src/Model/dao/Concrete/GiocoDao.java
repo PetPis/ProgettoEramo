@@ -38,6 +38,9 @@ public class GiocoDao implements GiocoDaoInterface{
     private static final String
     ALL_GAME_REVIEWS = "SELECT * FROM recensione WHERE recensione.gioco = ? AND recensione.approvazione = 1;";
     
+    private static final String
+    COUNT = "SELECT COUNT(idGioco) FROM GIOCO ";
+    
     /**
     *Method to insert a game
     *
@@ -123,7 +126,7 @@ public class GiocoDao implements GiocoDaoInterface{
         PreparedStatement ps = connection.prepareStatement(FIND_BY_NAME);
         ps.setString(1, name);
         ResultSet rset = ps.executeQuery();
-        if ( rset.first() == false ) 
+        if ( rset.next() == false ) 
             return null;
         gioco = new Gioco(rset.getInt(1), rset.getString(2), rset.getInt(3));
         ps.close();
@@ -177,16 +180,15 @@ public class GiocoDao implements GiocoDaoInterface{
         return votes_avarage;
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
+    public int GetNumberOfGames() throws SQLException{
+        int count ;
+        Connection connection = DB.openConnection();
+        Statement s = connection.createStatement();
+        ResultSet rset = s.executeQuery(COUNT);
+        count =rset.getInt(1);
+        s.close();
+        rset.close();
+        connection.close();
+        return count;
+    } 
 }

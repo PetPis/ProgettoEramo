@@ -22,4 +22,6 @@ public interface GiocoDaoInterface {
     public float getVotesAverage(Gioco gioco) throws SQLException;
   
     public ArrayList<Recensione> allGameReviews(Gioco gioco) throws SQLException;
+    
+    public int GetNumberOfGames() throws SQLException;
 }

@@ -50,13 +50,13 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setText("Profilo Personale");
+        jLabel1.setText("Personal Settings");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel2.setText("Nome:");
+        jLabel2.setText("Name :");
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel3.setText("Cognome:");
+        jLabel3.setText("Surname :");
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel4.setText("Username:");
@@ -65,7 +65,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
         jLabel5.setText("E-mail:");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel6.setText("Modifica Dati Personali:");
+        jLabel6.setText("Personal Data Edit :");
 
         btnHome.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnHome.setText("Home");
@@ -76,10 +76,10 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
         });
 
         comboModifica.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        comboModifica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Cognome", "Username", "E-mail", "Password" }));
+        comboModifica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Surname", "Username", "E-mail", "Password" }));
 
         btnModifica.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnModifica.setText("Modifica");
+        btnModifica.setText("Modify");
         btnModifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificaActionPerformed(evt);
@@ -184,16 +184,16 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
         String Selected = (String)comboModifica.getSelectedItem();
         switch (Selected) {
 
-            case "Nome":
-                String nuovo_nome = JOptionPane.showInputDialog("Seleziona nuovo nome:");
+            case "Name":
+                String nuovo_nome = JOptionPane.showInputDialog("Select a new Name :");
                 if (nuovo_nome != null) {
                     JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("nome", nuovo_nome, utente));
                     DynamicName.setText(utente.getNome());
                 }
                 break;
 
-            case "Cognome":
-                String nuovo_cognome = JOptionPane.showInputDialog("Seleziona nuovo cognome:");
+            case "Surname":
+                String nuovo_cognome = JOptionPane.showInputDialog("Select a new Surname :");
                 if (nuovo_cognome != null) {
                     JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("cognome", nuovo_cognome, utente));
                     GetCognome.setText(utente.getCognome());
@@ -201,7 +201,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
                 break;
 
             case "Username":
-                String nuovo_user = JOptionPane.showInputDialog("Seleziona nuovo Username:");
+                String nuovo_user = JOptionPane.showInputDialog("Select a new Username:");
                 if (nuovo_user != null) {
                     JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("username", nuovo_user, utente));
                     GetUsername.setText(utente.getUsername());
@@ -209,7 +209,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
                 break;
 
             case "E-mail":
-                String nuova_mail = JOptionPane.showInputDialog("Seleziona nuova E-Mail:");
+                String nuova_mail = JOptionPane.showInputDialog("Select a new E-Mail:");
                 if (nuova_mail != null) {
                     JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("email", nuova_mail, utente));
                     GetEmail.setText(utente.getEmail());
@@ -219,7 +219,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
             case "Password":
                 JPasswordField pf = new JPasswordField();
                 JPasswordField pf2 = new JPasswordField();
-                JLabel text = new JLabel("Scegli e conferma la nuova password:");
+                JLabel text = new JLabel("Select and confirm a new password:");
                 Object[] message = {text, pf, pf2};
                 Integer pressed_button = JOptionPane.showConfirmDialog(null, message, "Nuova password", JOptionPane.OK_CANCEL_OPTION);
                 String nuova_password = String.valueOf(pf.getPassword());
