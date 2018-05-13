@@ -11,10 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
-/**
- *
- * @author davidepetrini
- */
 public class ProfiloPersonaleView extends javax.swing.JFrame {
 
     private Utente utente;
@@ -188,12 +184,13 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificaActionPerformed
-         switch ((String) comboModifica.getSelectedItem()) {
+        String Selected = (String)comboModifica.getSelectedItem();
+        switch (Selected) {
 
             case "Nome":
                 String nuovo_nome = JOptionPane.showInputDialog("Seleziona nuovo nome:");
                 if (nuovo_nome != null) {
-                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("Nome", nuovo_nome, utente));
+                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("nome", nuovo_nome, utente));
                     DynamicName.setText(utente.getNome());
                 }
                 break;
@@ -201,7 +198,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
             case "Cognome":
                 String nuovo_cognome = JOptionPane.showInputDialog("Seleziona nuovo cognome:");
                 if (nuovo_cognome != null) {
-                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("Cognome", nuovo_cognome, utente));
+                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("cognome", nuovo_cognome, utente));
                     GetCognome.setText(utente.getCognome());
                 }
                 break;
@@ -209,7 +206,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
             case "Username":
                 String nuovo_user = JOptionPane.showInputDialog("Seleziona nuovo Username:");
                 if (nuovo_user != null) {
-                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("Username", nuovo_user, utente));
+                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("username", nuovo_user, utente));
                     GetUsername.setText(utente.getUsername());
                 }
                 break;
@@ -217,7 +214,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
             case "E-mail":
                 String nuova_mail = JOptionPane.showInputDialog("Seleziona nuova E-Mail:");
                 if (nuova_mail != null) {
-                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("E-mail", nuova_mail, utente));
+                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("email", nuova_mail, utente));
                     GetEmail.setText(utente.getEmail());
                 }
                 break;
@@ -231,7 +228,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
                 String nuova_password = String.valueOf(pf.getPassword());
                 String conferma_password = String.valueOf(pf2.getPassword());
                 if (pressed_button == 0) {
-                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("Password", nuova_password, conferma_password, utente));
+                    JOptionPane.showMessageDialog(rootPane, new GestioneUtenza().updateValue("password", nuova_password, conferma_password, utente));
                 }
         }
     }//GEN-LAST:event_btnModificaActionPerformed
@@ -290,6 +287,11 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
 
         btnModifica.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnModifica.setText("Modifica");
+        btnModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificaActionPerformed(evt);
+            }
+        });
 
         DynamicName.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
 

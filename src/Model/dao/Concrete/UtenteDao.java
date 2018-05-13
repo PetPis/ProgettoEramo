@@ -88,7 +88,7 @@ public class UtenteDao implements UtenteDaoInterface {
     @Override
     public void updateUser(String column, String newValue, Utente utente) throws SQLException {
         Connection connection = DB.openConnection();
-        PreparedStatement ps = connection.prepareStatement("UPDATE utente SET utente." + column + "= ? WHERE id = ?;");
+        PreparedStatement ps = connection.prepareStatement("UPDATE utente SET " + column + "= ? WHERE idUtente = ?;");
         ps.setString(1, newValue);
         ps.setInt(2, utente.getId());
         ps.executeUpdate();

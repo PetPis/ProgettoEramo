@@ -7,10 +7,6 @@ package View.Utente;
 
 import Model.Utente;
 
-/**
- *
- * @author davidepetrini
- */
 public class UtenteView extends javax.swing.JFrame {
     final Utente utente;
 
@@ -21,7 +17,6 @@ public class UtenteView extends javax.swing.JFrame {
         this.utente = utente;
         initComps();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

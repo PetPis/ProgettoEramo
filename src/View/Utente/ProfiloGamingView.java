@@ -5,10 +5,6 @@
  */
 package View.Utente;
 
-/**
- *
- * @author davidepetrini
- */
 public class ProfiloGamingView extends javax.swing.JFrame {
 
     /**
