@@ -7,6 +7,7 @@ package View.Utente;
 
 import Controller.GestioneUtenza;
 import Model.Utente;
+import View.Moderatore.ModeratoreView;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -176,8 +177,13 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+         if(utente.getTipo().equals( "moderatore")){
+            this.setVisible(false);
+            new ModeratoreView(utente).setVisible(true);
+        }else{
         this.setVisible(false);
         new UtenteView(utente).setVisible(true);
+        }
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificaActionPerformed

@@ -7,6 +7,7 @@ package View.Utente;
 
 import Controller.UtenteController;
 import Model.Utente;
+import View.Moderatore.ModeratoreView;
 import View.gioco.GiocoView;
 import java.awt.Color;
 import java.util.Map;
@@ -374,8 +375,13 @@ public class ProfiloGamingView extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(utente.getTipo().equals( "moderatore")){
+            this.setVisible(false);
+            new ModeratoreView(utente).setVisible(true);
+        }else{
         this.setVisible(false);
         new UtenteView(utente).setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TrofeiViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrofeiViewActionPerformed

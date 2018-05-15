@@ -145,7 +145,7 @@ public class RecensioneDao implements RecensioneDaoInterface {
         PreparedStatement ps = connection.prepareStatement(FIND_REVIEW);
         ps.setInt(1, id);
         ResultSet rset = ps.executeQuery();
-        if (rset.first() == false) {
+        if (rset.next() == false) {
             return null;
         }
         recensione = new Recensione(rset.getInt(1), rset.getInt(2), rset.getString(3), rset.getInt(4), rset.getInt(5));
@@ -171,7 +171,7 @@ public class RecensioneDao implements RecensioneDaoInterface {
         ps.setInt(1, utente.getId());
         ps.setInt(2, gioco.getId());
         ResultSet rset = ps.executeQuery();
-        if (rset.first() == false) {
+        if (rset.next() == false) {
             return null;
         }
         recensione = new Recensione(rset.getInt(1), rset.getInt(2), rset.getString(3), rset.getInt(4), rset.getInt(5));

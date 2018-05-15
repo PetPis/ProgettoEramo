@@ -5,16 +5,24 @@
  */
 package View.Moderatore;
 
+import Model.Utente;
+import View.Login;
+import View.Utente.GameListUtente;
+import View.Utente.ProfiloGamingView;
+import View.Utente.ProfiloPersonaleView;
+import View.Utente.UtenteView;
+
 /**
  *
  * @author davidepetrini
  */
 public class ModeratoreView extends javax.swing.JFrame {
-
+    private Utente utente;
     /**
      * Creates new form ModeratoreVie
      */
-    public ModeratoreView() {
+    public ModeratoreView(Utente utente) {
+        this.utente=utente;
         initComponents();
     }
 
@@ -43,12 +51,27 @@ public class ModeratoreView extends javax.swing.JFrame {
 
         btnProfPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnProfPers.setText("Profilo Personale");
+        btnProfPers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfPersActionPerformed(evt);
+            }
+        });
 
         btnProfGaming.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnProfGaming.setText("Profilo Gaming");
+        btnProfGaming.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfGamingActionPerformed(evt);
+            }
+        });
 
         btnVaiGiochi.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnVaiGiochi.setText("Vai ai Giochi");
+        btnVaiGiochi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVaiGiochiActionPerformed(evt);
+            }
+        });
 
         btnListaUtenti.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnListaUtenti.setText("Lista Utenti");
@@ -58,6 +81,11 @@ public class ModeratoreView extends javax.swing.JFrame {
 
         btnEsci.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnEsci.setText("Esci");
+        btnEsci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEsciActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,41 +157,25 @@ public class ModeratoreView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModeratoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModeratoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModeratoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModeratoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void btnEsciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsciActionPerformed
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_btnEsciActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ModeratoreView().setVisible(true);
-            }
-        });
-    }
+    private void btnProfPersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfPersActionPerformed
+       this.setVisible(false);
+        new ProfiloPersonaleView(utente).setVisible(true);
+    }//GEN-LAST:event_btnProfPersActionPerformed
+
+    private void btnProfGamingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfGamingActionPerformed
+        this.setVisible(false);
+        new ProfiloGamingView(utente).setVisible(true);
+    }//GEN-LAST:event_btnProfGamingActionPerformed
+
+    private void btnVaiGiochiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaiGiochiActionPerformed
+        this.setVisible(false);
+        new GameListUtente(utente).setVisible(true);
+    }//GEN-LAST:event_btnVaiGiochiActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEsci;

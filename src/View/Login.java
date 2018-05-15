@@ -135,10 +135,10 @@ public class Login extends javax.swing.JFrame {
                 new UtenteView(utente).setVisible(true);
             }
             if (utente.getTipo().equals("moderatore")) {
-                new ModeratoreView().setVisible(true);
+                new ModeratoreView(utente).setVisible(true);
             }
             if (utente.getTipo().equals("amministratore")) {
-                new AmministratoreView().setVisible(true);
+                new AmministratoreView(utente).setVisible(true);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

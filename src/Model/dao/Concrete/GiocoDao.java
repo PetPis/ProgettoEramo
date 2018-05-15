@@ -36,7 +36,7 @@ public class GiocoDao implements GiocoDaoInterface{
     VOTES_AVERAGE = "SELECT AVG(valutazione) AS average FROM gioco JOIN recensione ON gioco.idGioco = recensione.gioco WHERE idGioco = ?;";
 
     private static final String
-    ALL_GAME_REVIEWS = "SELECT * FROM recensione WHERE recensione.gioco = ? AND recensione.approvazione = 1;";
+    ALL_GAME_REVIEWS = "SELECT * FROM recensione WHERE recensione.gioco = ? AND recensione.approvazione = 1 AND recensione.testo != '';";
     
     private static final String
     COUNT = "SELECT COUNT(idGioco) FROM GIOCO ";

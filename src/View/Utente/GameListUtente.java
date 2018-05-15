@@ -8,6 +8,7 @@ package View.Utente;
 import Controller.GiocoController;
 import Model.Gioco;
 import Model.Utente;
+import View.Moderatore.ModeratoreView;
 import View.gioco.GiocoView;
 import java.util.List;
 import javax.swing.JList;
@@ -217,8 +218,13 @@ public class GameListUtente extends javax.swing.JFrame {
     }
 
     private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
+         if(utente.getTipo().equals( "moderatore")){
+            this.setVisible(false);
+            new ModeratoreView(utente).setVisible(true);
+        }else{
         this.setVisible(false);
         new UtenteView(utente).setVisible(true);
+        }
     }//GEN-LAST:event_HomeBtnActionPerformed
 
     private void HomeBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtn1ActionPerformed

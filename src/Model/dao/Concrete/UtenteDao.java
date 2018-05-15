@@ -37,7 +37,7 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String REVIEW_GAME = "INSERT INTO recensione(testo, gioco, utente) VALUES (?, ?, ?);";
 
-    private static final String APPROVE_REVIEW = "UPDATE recensione SET approvazione = 1 WHERE id = ?;";
+    private static final String APPROVE_REVIEW = "UPDATE recensione SET approvazione = 1 WHERE idRecensione = ?;";
 
     private static final String UPDATE_REVIEW = "UPDATE recensione SET testo = ?, approvazione = 0 WHERE utente = ? AND gioco = ?;";
 
