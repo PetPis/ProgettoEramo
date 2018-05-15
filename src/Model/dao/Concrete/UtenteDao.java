@@ -31,9 +31,9 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String UPDATE_LEVEL = "UPDATE utente SET livello = ? WHERE username = ?;";
 
-    private static final String VOTE_GAME = "INSERT INTO voto(votazione, gioco, utente) VALUES (?, ?, ?);";
+    private static final String VOTE_GAME = "INSERT INTO recensione(valutazione, gioco, utente) VALUES (?, ?, ?);";
 
-    private static final String UPDATE_VOTE = "UPDATE voto SET votazione = ? WHERE utente = ? AND gioco = ?;";
+    private static final String UPDATE_VOTE = "UPDATE recensione SET valutazione = ? WHERE utente = ? AND gioco = ?;";
 
     private static final String REVIEW_GAME = "INSERT INTO recensione(testo, gioco, utente) VALUES (?, ?, ?);";
 
@@ -45,11 +45,11 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String DEMOTE_USER = "UPDATE utente SET tipo = \"utente\" WHERE id = ?;";
 
-    private static final String GET_TIMELINE = "SELECT * FROM timeline WHERE utente = ?;";
+    private static final String GET_TIMELINE = "SELECT * FROM timeline WHERE utente = ? order by livello;";
 
-    private static final String GAME_ALREADY_VOTED = "SELECT COUNT(*) AS total FROM voto WHERE utente = ? and gioco = ?;";
+    private static final String GAME_ALREADY_VOTED = "SELECT COUNT(valutazione) AS total FROM recensione WHERE utente = ? and gioco = ?;";
 
-    private static final String GAME_ALREADY_REVIEWED = "SELECT COUNT(*) AS total FROM recensione WHERE utente = ? and gioco = ?;";
+    private static final String GAME_ALREADY_REVIEWED = "SELECT COUNT(testo) AS total FROM recensione WHERE utente = ? and gioco = ?;";
 
     private static final String USERNAME_ALREADY_USED = "SELECT COUNT(*) AS total FROM utente WHERE username = ?;";
 
@@ -370,7 +370,7 @@ public class UtenteDao implements UtenteDaoInterface {
     public TreeMap<Integer, String> getTimeline(Utente utente) throws SQLException {
         TreeMap<Integer, String> timeline = new TreeMap<>();
         Connection connection = DB.openConnection();
-        PreparedStatement ps = connection.prepareStatement(GET_TIMELINE);
+        PreparedStatement ps = connection.prepareStatement( GET_TIMELINE);
         ps.setInt(1, utente.getId());
         ResultSet rset = ps.executeQuery();
         while (rset.next()) {
@@ -400,7 +400,7 @@ public class UtenteDao implements UtenteDaoInterface {
         ps.setInt(1, utente.getId());
         ps.setInt(2, gioco.getId());
         ResultSet rset = ps.executeQuery();
-        rset.first();
+        rset.next();
         if (rset.getInt(1) == 1) {
             already_voted = true;
         }
@@ -428,7 +428,7 @@ public class UtenteDao implements UtenteDaoInterface {
         ps.setInt(1, utente.getId());
         ps.setInt(2, gioco.getId());
         ResultSet rset = ps.executeQuery();
-        rset.first();
+        rset.next();
         if (rset.getInt(1) == 1) {
             already_reviewed = true;
         }

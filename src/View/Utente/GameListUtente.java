@@ -9,9 +9,7 @@ import Controller.GiocoController;
 import Model.Gioco;
 import Model.Utente;
 import View.gioco.GiocoView;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JButton;
 import javax.swing.JList;
 
 /**
@@ -226,7 +224,7 @@ public class GameListUtente extends javax.swing.JFrame {
     private void HomeBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtn1ActionPerformed
         this.setVisible(false);
         Gioco toGame = new GiocoController().findGame(LstGiochi.getSelectedValue());
-        new GiocoView(toGame).setVisible(true);
+        new GiocoView(toGame,utente).setVisible(true);
     }//GEN-LAST:event_HomeBtn1ActionPerformed
 
     /**

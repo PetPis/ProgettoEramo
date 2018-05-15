@@ -33,7 +33,7 @@ public class GiocoDao implements GiocoDaoInterface{
     FIND_BY_NAME = "SELECT * FROM gioco WHERE nome = ?;";
 
     private static final String
-    VOTES_AVERAGE = "SELECT AVG(votazione) AS average FROM gioco JOIN voto ON gioco.id = voto.gioco WHERE id = ?;";
+    VOTES_AVERAGE = "SELECT AVG(valutazione) AS average FROM gioco JOIN recensione ON gioco.idGioco = recensione.gioco WHERE idGioco = ?;";
 
     private static final String
     ALL_GAME_REVIEWS = "SELECT * FROM recensione WHERE recensione.gioco = ? AND recensione.approvazione = 1;";
@@ -172,13 +172,14 @@ public class GiocoDao implements GiocoDaoInterface{
         PreparedStatement ps = connection.prepareStatement(VOTES_AVERAGE);
         ps.setInt(1, gioco.getId());
         ResultSet rset = ps.executeQuery();
-        rset.first();
+        rset.next();
         votes_avarage = rset.getFloat(1);
         ps.close();
         rset.close();
         connection.close();
         return votes_avarage;
     }
+    
     
     public int GetNumberOfGames() throws SQLException{
         int count ;

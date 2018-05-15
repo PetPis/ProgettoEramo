@@ -94,7 +94,7 @@ public class UtenteController {
      */
     public String review(String testoRecensione) {
         try {
-            if (new UtenteDao().reviewAlreadyMadeByUser(utente, gioco)) {
+           if (new UtenteDao().reviewAlreadyMadeByUser(utente, gioco)) {
                 new UtenteDao().updateReview(testoRecensione, utente, gioco);
                 if (utente.getTipo().equals("moderatore")) {
                     new UtenteDao().approveReview(new RecensioneDao().findReviewByUserAndGame(utente, gioco));
