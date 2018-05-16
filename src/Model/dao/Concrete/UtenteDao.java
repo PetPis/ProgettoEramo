@@ -21,7 +21,7 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String DELETE = "DELETE FROM utente WHERE id = ?;";
 
-    private static final String ALL = "SELECT * FROM utente ORDER BY username;";
+    private static final String ALL = "SELECT * FROM utente WHERE tipo != 'amministratore' ORDER BY username;";
 
     private static final String DELETE_ALL = "DELETE FROM utente;";
 
@@ -41,9 +41,9 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String UPDATE_REVIEW = "UPDATE recensione SET testo = ?, approvazione = 0 WHERE utente = ? AND gioco = ?;";
 
-    private static final String PROMOTE_USER = "UPDATE utente SET tipo = \"moderatore\" WHERE id = ?;";
+    private static final String PROMOTE_USER = "UPDATE utente SET tipo = \"moderatore\" WHERE idUtente = ?;";
 
-    private static final String DEMOTE_USER = "UPDATE utente SET tipo = \"utente\" WHERE id = ?;";
+    private static final String DEMOTE_USER = "UPDATE utente SET tipo = \"utente\" WHERE idUtente = ?;";
 
     private static final String GET_TIMELINE = "SELECT * FROM timeline WHERE utente = ? order by livello;";
 
@@ -54,6 +54,8 @@ public class UtenteDao implements UtenteDaoInterface {
     private static final String USERNAME_ALREADY_USED = "SELECT COUNT(*) AS total FROM utente WHERE username = ?;";
 
     private static final String EMAIL_ALREADY_USED = "SELECT COUNT(*) AS total FROM utente WHERE email = ?;";
+    
+    private static final String MAX_USERS="SELECT COUNT(*) FROM utente";
 
     /**
      * Method to insert a user
@@ -490,4 +492,15 @@ public class UtenteDao implements UtenteDaoInterface {
         return usernameOrEmailAlreadyUsed(EMAIL_ALREADY_USED, email);
     }
 
+    public int getMaxUsers() throws SQLException{
+          int count ;
+        Connection connection = DB.openConnection();
+        Statement s = connection.createStatement();
+        ResultSet rset = s.executeQuery(MAX_USERS);
+        count =rset.getInt(1);
+        s.close();
+        rset.close();
+        connection.close();
+        return count;
+    }
 }

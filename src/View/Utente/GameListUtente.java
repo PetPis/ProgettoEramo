@@ -6,6 +6,7 @@
 package View.Utente;
 
 import Controller.GiocoController;
+import Controller.ModeratoreController;
 import Model.Gioco;
 import Model.Utente;
 import View.Moderatore.ModeratoreView;
@@ -131,8 +132,7 @@ public class GameListUtente extends javax.swing.JFrame {
         HomeBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        
-        
+                
         List<Gioco> gl = new GiocoController().listOfGames();
         int n = new GiocoController().NumberOfGames();
         String[] jl = new String [n];

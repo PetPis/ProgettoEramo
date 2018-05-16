@@ -50,4 +50,5 @@ public interface UtenteDaoInterface {
   
     public boolean emailAlreadyUsed(String email) throws SQLException;
     
+    public int getMaxUsers() throws SQLException;
 }

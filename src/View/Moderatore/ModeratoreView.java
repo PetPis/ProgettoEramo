@@ -10,12 +10,7 @@ import View.Login;
 import View.Utente.GameListUtente;
 import View.Utente.ProfiloGamingView;
 import View.Utente.ProfiloPersonaleView;
-import View.Utente.UtenteView;
 
-/**
- *
- * @author davidepetrini
- */
 public class ModeratoreView extends javax.swing.JFrame {
     private Utente utente;
     /**
@@ -75,6 +70,11 @@ public class ModeratoreView extends javax.swing.JFrame {
 
         btnListaUtenti.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnListaUtenti.setText("Lista Utenti");
+        btnListaUtenti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaUtentiActionPerformed(evt);
+            }
+        });
 
         btnListaRecens.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnListaRecens.setText("Lista recensioni");
@@ -176,6 +176,11 @@ public class ModeratoreView extends javax.swing.JFrame {
         this.setVisible(false);
         new GameListUtente(utente).setVisible(true);
     }//GEN-LAST:event_btnVaiGiochiActionPerformed
+
+    private void btnListaUtentiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaUtentiActionPerformed
+        this.setVisible(false);
+        new UserListView(utente).setVisible(true);
+    }//GEN-LAST:event_btnListaUtentiActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEsci;

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import Model.*;
 import Model.DAO.Concrete.RecensioneDao;
 import Model.DAO.Concrete.UtenteDao;
+import Model.dao.Concrete.GiocoDao;
 
 /**
  * Class which represents the controller of MVC pattern for the user
@@ -129,5 +130,13 @@ public class UtenteController {
             e.printStackTrace();
         }
         return null;
+    }
+     public int NumberOfUsers(){
+        try{
+            return new UtenteDao().getMaxUsers();
+        }catch(SQLException exc){
+            exc.printStackTrace();
+        }
+        return -1;
     }
 }
