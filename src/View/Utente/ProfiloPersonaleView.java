@@ -7,6 +7,7 @@ package View.Utente;
 
 import Controller.GestioneUtenza;
 import Model.Utente;
+import View.Amministratore.AmministratoreView;
 import View.Moderatore.ModeratoreView;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -177,7 +178,11 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-         if(utente.getTipo().equals( "moderatore")){
+         if (utente.getTipo().equals( "amministratore")){
+             this.setVisible(false);
+            new AmministratoreView(utente).setVisible(true);
+         }
+        else if(utente.getTipo().equals( "moderatore")){
             this.setVisible(false);
             new ModeratoreView(utente).setVisible(true);
         }else{

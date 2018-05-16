@@ -6,19 +6,19 @@
 package View.Amministratore;
 
 import Model.Utente;
+import View.Login;
+import View.Utente.ProfiloPersonaleView;
 
-/**
- *
- * @author davidepetrini
- */
 public class AmministratoreView extends javax.swing.JFrame {
+
     private Utente utente;
+
     /**
      * Creates new form AmministratoreVie
      */
     public AmministratoreView(Utente utente) {
         this.utente = utente;
-        initComponents();
+        initComps();
     }
 
     /**
@@ -33,22 +33,43 @@ public class AmministratoreView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Welcome = new javax.swing.JLabel();
         ProfiloPers = new javax.swing.JButton();
-        ProfiloGame = new javax.swing.JButton();
-        GoToGames = new javax.swing.JButton();
+        Games = new javax.swing.JButton();
+        UserList = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        Welcome.setText("Benvenuto <dynamic> [A]");
+        Welcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Welcome.setText("Welcome <dynamic> [A]");
 
-        ProfiloPers.setText("Profilo Personale");
+        ProfiloPers.setText("Personal Settings");
+        ProfiloPers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfiloPersActionPerformed(evt);
+            }
+        });
 
-        ProfiloGame.setText("Lista Giochi");
+        Games.setText("Edit Games");
+        Games.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GamesActionPerformed(evt);
+            }
+        });
 
-        GoToGames.setText("Lista Utenti");
+        UserList.setText("Users List");
+        UserList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserListActionPerformed(evt);
+            }
+        });
 
-        Exit.setText("Esci");
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -58,31 +79,28 @@ public class AmministratoreView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ProfiloGame, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ProfiloPers, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Games, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                            .addComponent(ProfiloPers, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                            .addComponent(Welcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GoToGames, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                            .addComponent(UserList, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                             .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(96, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Welcome)
-                .addGap(137, 137, 137))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
+                .addGap(80, 80, 80)
                 .addComponent(ProfiloPers)
                 .addGap(18, 18, 18)
-                .addComponent(ProfiloGame)
+                .addComponent(Games)
                 .addGap(18, 18, 18)
-                .addComponent(GoToGames)
+                .addComponent(UserList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Exit)
                 .addContainerGap(89, Short.MAX_VALUE))
@@ -112,11 +130,135 @@ public class AmministratoreView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initComps(){
+        jPanel1 = new javax.swing.JPanel();
+        Welcome = new javax.swing.JLabel();
+        ProfiloPers = new javax.swing.JButton();
+        Games = new javax.swing.JButton();
+        UserList = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        Welcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Welcome.setText("Welcome " +utente.getNome()+ " [A]");
+
+        ProfiloPers.setText("Personal Settings");
+        ProfiloPers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfiloPersActionPerformed(evt);
+            }
+        });
+
+        Games.setText("Edit Games");
+        Games.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GamesActionPerformed(evt);
+            }
+        });
+
+        UserList.setText("Users List");
+        UserList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserListActionPerformed(evt);
+            }
+        });
+
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(107, 107, 107)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ProfiloPers, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(UserList, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                                .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(Welcome)))
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(ProfiloPers)
+                .addGap(18, 18, 18)
+                .addComponent(Games)
+                .addGap(18, 18, 18)
+                .addComponent(UserList)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Exit)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 525, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        pack();
+    }
+    
+    private void ProfiloPersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfiloPersActionPerformed
+        this.setVisible(false);
+        new ProfiloPersonaleView(utente).setVisible(true);
+    }//GEN-LAST:event_ProfiloPersActionPerformed
+
+    private void GamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GamesActionPerformed
+        this.setVisible(false);
+        new ProfiloPersonaleView(utente).setVisible(true);
+    }//GEN-LAST:event_GamesActionPerformed
+
+    private void UserListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserListActionPerformed
+        this.setVisible(false);
+        new UserListAdminView(utente).setVisible(true);
+    }//GEN-LAST:event_UserListActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_ExitActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
-    private javax.swing.JButton GoToGames;
-    private javax.swing.JButton ProfiloGame;
+    private javax.swing.JButton Games;
     private javax.swing.JButton ProfiloPers;
+    private javax.swing.JButton UserList;
     private javax.swing.JLabel Welcome;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

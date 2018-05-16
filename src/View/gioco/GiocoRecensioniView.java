@@ -11,10 +11,6 @@ import Model.Recensione;
 import Model.Utente;
 import java.util.ArrayList;
 
-/**
- *
- * @author davidepetrini
- */
 public class GiocoRecensioniView extends javax.swing.JFrame {
 
     private Utente utente;
@@ -105,7 +101,7 @@ public class GiocoRecensioniView extends javax.swing.JFrame {
             recensioni.setText(recensioni.getText() + "  - " + r.getTesto() + "\n\n");}
 
             jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-            jLabel1.setText("Lista Recensioni");
+            jLabel1.setText("Review List for "+ gioco.getNome());
 
             back.setText("Back");
             back.addActionListener(new java.awt.event.ActionListener() {

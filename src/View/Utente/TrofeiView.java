@@ -8,11 +8,7 @@ package View.Utente;
 import Model.Utente;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author davidepetrini
- */
-public class TrofeiView extends javax.swing.JFrame {
+class TrofeiView extends javax.swing.JFrame {
 
     private Utente utente;
     private int i = 1;                          // per il livello utente
@@ -80,9 +76,9 @@ public class TrofeiView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(IndietroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(trofImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(trofImg, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(AvantiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -90,7 +86,7 @@ public class TrofeiView extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(223, 223, 223))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backBtn)
                 .addGap(232, 232, 232))
         );
@@ -101,7 +97,7 @@ public class TrofeiView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AvantiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(IndietroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
@@ -116,25 +112,63 @@ public class TrofeiView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
+            .addGap(0, 563, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 37, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 37, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 454, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        this.setVisible(false);
+        new ProfiloGamingView(utente).setVisible(true);
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void AvantiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvantiBtnActionPerformed
+        ImageIcon[] icon = new ImageIcon[5];
+        icon[0] = new ImageIcon(getClass().getResource("/View/img/Trofeo1.png"));
+        icon[1] = new ImageIcon(getClass().getResource("/View/img/Trofeo2.png"));
+        icon[2] = new ImageIcon(getClass().getResource("/View/img/Trofeo3.png"));
+        icon[3] = new ImageIcon(getClass().getResource("/View/img/Trofeo4.png"));
+        icon[4] = new ImageIcon(getClass().getResource("/View/img/Trofeo5.png"));
+
+        if (i + 1 == utente.getLivello()) {
+            AvantiBtn.setVisible(false);
+        }
+        IndietroBtn.setVisible(true);
+        i++;
+        trofImg.setIcon(icon[cont+1]);
+        cont++;
+    }//GEN-LAST:event_AvantiBtnActionPerformed
+
+    private void IndietroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroBtnActionPerformed
+        ImageIcon[] icon = new ImageIcon[5];
+        icon[0] = new ImageIcon(getClass().getResource("/View/img/Trofeo1.png"));
+        icon[1] = new ImageIcon(getClass().getResource("/View/img/Trofeo2.png"));
+        icon[2] = new ImageIcon(getClass().getResource("/View/img/Trofeo3.png"));
+        icon[3] = new ImageIcon(getClass().getResource("/View/img/Trofeo4.png"));
+        icon[4] = new ImageIcon(getClass().getResource("/View/img/Trofeo5.png"));
+        if (i - 1 == 1) {
+            IndietroBtn.setVisible(false);
+        }
+        AvantiBtn.setVisible(true);
+        i--;
+        trofImg.setIcon(icon[cont-1]);
+        cont--;
+    }//GEN-LAST:event_IndietroBtnActionPerformed
 
     private void InitComps() {
         jPanel1 = new javax.swing.JPanel();
@@ -233,44 +267,6 @@ public class TrofeiView extends javax.swing.JFrame {
 
         pack();
     }
-
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        this.setVisible(false);
-        new ProfiloGamingView(utente).setVisible(true);
-    }//GEN-LAST:event_backBtnActionPerformed
-
-    private void AvantiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvantiBtnActionPerformed
-       ImageIcon[] icon = new ImageIcon[5];
-        icon[0] = new ImageIcon(getClass().getResource("/View/img/Trofeo1.png"));
-        icon[1] = new ImageIcon(getClass().getResource("/View/img/Trofeo2.png"));
-        icon[2] = new ImageIcon(getClass().getResource("/View/img/Trofeo3.png"));
-        icon[3] = new ImageIcon(getClass().getResource("/View/img/Trofeo4.png"));
-        icon[4] = new ImageIcon(getClass().getResource("/View/img/Trofeo5.png"));
-        
-        if (i + 1 == utente.getLivello()) {
-            AvantiBtn.setVisible(false);
-        }
-        IndietroBtn.setVisible(true);
-        i++;
-        trofImg.setIcon(icon[cont+1]);
-        cont++;
-    }//GEN-LAST:event_AvantiBtnActionPerformed
-
-    private void IndietroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroBtnActionPerformed
-        ImageIcon[] icon = new ImageIcon[5];
-        icon[0] = new ImageIcon(getClass().getResource("/View/img/Trofeo1.png"));
-        icon[1] = new ImageIcon(getClass().getResource("/View/img/Trofeo2.png"));
-        icon[2] = new ImageIcon(getClass().getResource("/View/img/Trofeo3.png"));
-        icon[3] = new ImageIcon(getClass().getResource("/View/img/Trofeo4.png"));
-        icon[4] = new ImageIcon(getClass().getResource("/View/img/Trofeo5.png"));
-        if (i - 1 == 1) {
-            IndietroBtn.setVisible(false);
-        }
-        AvantiBtn.setVisible(true);
-         i--;
-        trofImg.setIcon(icon[cont-1]);
-       cont--;
-    }//GEN-LAST:event_IndietroBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AvantiBtn;

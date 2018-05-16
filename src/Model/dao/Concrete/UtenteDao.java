@@ -19,7 +19,7 @@ public class UtenteDao implements UtenteDaoInterface {
 
     private static final String INSERT = "INSERT INTO utente(nome, cognome, username, email, password) VALUES (?, ?, ?, ?, ?);";
 
-    private static final String DELETE = "DELETE FROM utente WHERE id = ?;";
+    private static final String DELETE = "DELETE FROM utente WHERE idUtente = ?;";
 
     private static final String ALL = "SELECT * FROM utente WHERE tipo != 'amministratore' ORDER BY username;";
 

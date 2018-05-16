@@ -3,23 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View.Moderatore;
+package View.Amministratore;
 
+import Controller.AmministratoreController;
 import Controller.GestioneUtenza;
-import javax.swing.JOptionPane;
 import Controller.ModeratoreController;
 import Model.Utente;
 import java.util.List;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
-public class UserListView extends javax.swing.JFrame {
+public class UserListAdminView extends javax.swing.JFrame {
 
     private Utente utente;
 
     /**
-     * Creates new form UserListView
+     * Creates new form UserListAdminView
      */
-    public UserListView(Utente utente) {
+    public UserListAdminView(Utente utente) {
         this.utente = utente;
         initComps();
     }
@@ -35,29 +36,24 @@ public class UserListView extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        userList = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>();
         Promote = new javax.swing.JButton();
-        Back = new javax.swing.JButton();
         Demote = new javax.swing.JButton();
+        Delete = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         jLabel1.setText("Users List");
 
-        jScrollPane2.setViewportView(userList);
+        jScrollPane2.setViewportView(jList1);
 
+        Promote.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Promote.setText("Promote");
         Promote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PromoteActionPerformed(evt);
-            }
-        });
-
-        Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
             }
         });
 
@@ -68,30 +64,46 @@ public class UserListView extends javax.swing.JFrame {
             }
         });
 
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(Promote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 197, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(214, 214, 214)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Promote)
+                                .addGap(0, 0, 0)
+                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 186, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,13 +112,14 @@ public class UserListView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Promote)
-                    .addComponent(Back)
-                    .addComponent(Demote))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(Demote)
+                    .addComponent(Delete)
+                    .addComponent(Back))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,41 +128,35 @@ public class UserListView extends javax.swing.JFrame {
     private void initComps() {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        userList = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>();
         Promote = new javax.swing.JButton();
-        Back = new javax.swing.JButton();
         Demote = new javax.swing.JButton();
+        Delete = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jList1.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         List<Utente> lU = new ModeratoreController().usersList();
         int n = new ModeratoreController().NumberOfUsers();
         String[] jl = new String[n];
         int i = 0;
         for (Utente g : lU) {
-                 jl[i] = g.getUsername();
+            jl[i] = g.getUsername();
             i++;
         }
-        userList = new JList(jl);
+        jList1 = new JList(jl);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         jLabel1.setText("Users List");
 
-        jScrollPane2.setViewportView(userList);
+        jScrollPane2.setViewportView(jList1);
 
         Promote.setText("Promote");
         Promote.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         Promote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PromoteActionPerformed(evt);
-            }
-        });
-
-        Back.setText("Back");
-        Back.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
             }
         });
 
@@ -161,30 +168,48 @@ public class UserListView extends javax.swing.JFrame {
             }
         });
 
+        Delete.setText("Delete");
+        Delete.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+
+        Back.setText("Back");
+        Demote.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGap(212, 212, 212)
-                                                                .addComponent(jLabel1))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(Promote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(0, 0, 0)
-                                                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 197, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addContainerGap()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                                 .addGap(0, 0, Short.MAX_VALUE)
-                                                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(214, 214, 214)
+                                                                .addComponent(jLabel1))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(Promote)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(0, 184, Short.MAX_VALUE)))
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -193,13 +218,14 @@ public class UserListView extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(Promote)
-                                        .addComponent(Back)
-                                        .addComponent(Demote))
-                                .addContainerGap(47, Short.MAX_VALUE))
+                                        .addComponent(Demote)
+                                        .addComponent(Delete)
+                                        .addComponent(Back))
+                                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,14 +233,40 @@ public class UserListView extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         this.setVisible(false);
-        new ModeratoreView(utente).setVisible(true);
+        new AmministratoreView(utente).setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
-    private void PromoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PromoteActionPerformed
-        if (userList.getSelectedValue() == null) {
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        if (jList1.getSelectedValue() == null) {
             JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
         } else {
-            Utente utente = new GestioneUtenza().findUser(userList.getSelectedValue());
+            Utente utente = new GestioneUtenza().findUser(jList1.getSelectedValue());
+            new AmministratoreController(utente).deleteUser();
+            this.setVisible(false);
+            new UserListAdminView(utente).setVisible(true);
+        }
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void DemoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DemoteActionPerformed
+        if (jList1.getSelectedValue() == null) {
+            JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Utente utente = new GestioneUtenza().findUser(jList1.getSelectedValue());
+            if (utente.getTipo().equals("utente")) {
+                JOptionPane.showMessageDialog(rootPane, "The user can not be demoted under user type");
+
+            } else {
+                new ModeratoreController(utente).demote();
+                JOptionPane.showMessageDialog(rootPane, "User Demoted!");
+            }
+        }
+    }//GEN-LAST:event_DemoteActionPerformed
+
+    private void PromoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PromoteActionPerformed
+        if (jList1.getSelectedValue() == null) {
+            JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Utente utente = new GestioneUtenza().findUser(jList1.getSelectedValue());
             if (utente.getTipo().equals("moderatore")) {
                 JOptionPane.showMessageDialog(rootPane, "The user is already a moderator");
             } else {
@@ -224,26 +276,14 @@ public class UserListView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PromoteActionPerformed
 
-    private void DemoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DemoteActionPerformed
-        if (userList.getSelectedValue() == null) {
-            JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
-        } else {
-            Utente utente = new GestioneUtenza().findUser(userList.getSelectedValue());
-            if (utente.getTipo().equals("utente")) {
-                JOptionPane.showMessageDialog(rootPane, "The user can not be demoted under user type");
-            } else {
-                new ModeratoreController(utente).demote();
-                JOptionPane.showMessageDialog(rootPane, "User Demoted!");
-            }
-        }
-    }//GEN-LAST:event_DemoteActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
+    private javax.swing.JButton Delete;
     private javax.swing.JButton Demote;
     private javax.swing.JButton Promote;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList<String> userList;
     // End of variables declaration//GEN-END:variables
 }

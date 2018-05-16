@@ -37,7 +37,9 @@ public class UtenteView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        Welcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Welcome.setText("Welcome <Dynamic>");
+        Welcome.setToolTipText("");
 
         ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         ProfiloPers.setText("User Settings");
@@ -80,26 +82,23 @@ public class UtenteView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ProfiloGame, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ProfiloPers, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ProfiloGame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                            .addComponent(ProfiloPers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                            .addComponent(Welcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GoToGames, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                             .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(96, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Welcome)
-                .addGap(162, 162, 162))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(30, 30, 30)
+                .addComponent(Welcome)
+                .addGap(79, 79, 79)
                 .addComponent(ProfiloPers)
                 .addGap(18, 18, 18)
                 .addComponent(ProfiloGame)
@@ -145,6 +144,7 @@ public class UtenteView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Welcome.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        Welcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Welcome.setText("Welcome " + utente.getNome());
 
         ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N

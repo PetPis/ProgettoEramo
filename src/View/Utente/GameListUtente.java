@@ -6,7 +6,6 @@
 package View.Utente;
 
 import Controller.GiocoController;
-import Controller.ModeratoreController;
 import Model.Gioco;
 import Model.Utente;
 import View.Moderatore.ModeratoreView;
@@ -14,10 +13,6 @@ import View.gioco.GiocoView;
 import java.util.List;
 import javax.swing.JList;
 
-/**
- *
- * @author Marco
- */
 public class GameListUtente extends javax.swing.JFrame {
 
     private Utente utente;

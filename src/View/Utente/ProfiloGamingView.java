@@ -8,7 +8,6 @@ package View.Utente;
 import Controller.UtenteController;
 import Model.Utente;
 import View.Moderatore.ModeratoreView;
-import View.gioco.GiocoView;
 import java.awt.Color;
 import java.util.Map;
 import java.util.TreeMap;

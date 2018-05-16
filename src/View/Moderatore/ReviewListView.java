@@ -8,7 +8,6 @@ package View.Moderatore;
 import Controller.ModeratoreController;
 import Model.Recensione;
 import Model.Utente;
-import java.awt.Color;
 import java.util.List;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -55,6 +54,7 @@ public class ReviewListView extends javax.swing.JFrame {
             }
         });
 
+        accept.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         accept.setText("Accept");
         accept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class ReviewListView extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(accept)
                     .addComponent(jButton3))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,6 +133,7 @@ public class ReviewListView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(reviewList);
 
         jButton1.setText("Back");
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -140,6 +141,7 @@ public class ReviewListView extends javax.swing.JFrame {
         });
 
         accept.setText("Accept");
+        accept.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         accept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acceptActionPerformed(evt);
@@ -147,6 +149,7 @@ public class ReviewListView extends javax.swing.JFrame {
         });
 
         jButton3.setText("Decline");
+        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
