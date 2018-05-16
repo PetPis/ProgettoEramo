@@ -18,17 +18,19 @@ public class RecensioneDao implements RecensioneDaoInterface {
 
     private static final String INSERT = "INSERT INTO recensione(testo, gioco, utente) VALUES (?, ?, ?);";
 
-    private static final String DELETE = "DELETE FROM recensione WHERE id = ?;";
+    private static final String DELETE = "DELETE FROM recensione WHERE idRecensione = ?;";
 
     private static final String ALL = "SELECT * FROM recensione;";
 
-    private static final String ALL_NOT_APPROVED = "SELECT * FROM recensione WHERE approvazione = 0;";
+    private static final String ALL_NOT_APPROVED = "SELECT * FROM recensione WHERE approvazione = 0 AND testo != '';";
 
     private static final String DELETE_ALL = "DELETE FROM gioco;";
 
-    private static final String FIND_REVIEW = "SELECT * FROM recensione WHERE id = ?;";
+    private static final String FIND_REVIEW = "SELECT * FROM recensione WHERE idRecensione = ?;";
 
     private static final String FIND_REVIEW_BY_USER_AND_GAME = "SELECT * from recensione WHERE utente = ? AND gioco = ?;";
+    
+    private static final String COUNT_REVIEW = "SELECT COUNT(*) FROM recensione";
 
     /**
      * Method to insert a review
@@ -178,6 +180,18 @@ public class RecensioneDao implements RecensioneDaoInterface {
         ps.close();
         connection.close();
         return recensione;
+    }
+    
+       public int CountReview() throws SQLException{
+          int count ;
+        Connection connection = DB.openConnection();
+        Statement s = connection.createStatement();
+        ResultSet rset = s.executeQuery(COUNT_REVIEW);
+        count =rset.getInt(1);
+        s.close();
+        rset.close();
+        connection.close();
+        return count;
     }
 
 }

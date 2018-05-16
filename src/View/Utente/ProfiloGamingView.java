@@ -386,7 +386,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
 
     private void TrofeiViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrofeiViewActionPerformed
         if (utente.getLivello() < 1) {
-            JOptionPane.showMessageDialog(rootPane, "Non hai ancora collezionato trofei!", "No trofei", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "you have not collected trophies yet", "No Trophies", JOptionPane.ERROR_MESSAGE);
         }
         else{
             this.setVisible(false);

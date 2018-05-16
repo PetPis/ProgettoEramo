@@ -42,10 +42,10 @@ public class ModeratoreView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setText("Benvenuto <dinamic> [M]");
+        jLabel1.setText("Welcome <dynamic> [M]");
 
         btnProfPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnProfPers.setText("Profilo Personale");
+        btnProfPers.setText("User Setting");
         btnProfPers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfPersActionPerformed(evt);
@@ -53,7 +53,7 @@ public class ModeratoreView extends javax.swing.JFrame {
         });
 
         btnProfGaming.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnProfGaming.setText("Profilo Gaming");
+        btnProfGaming.setText("Game Profile");
         btnProfGaming.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfGamingActionPerformed(evt);
@@ -61,7 +61,7 @@ public class ModeratoreView extends javax.swing.JFrame {
         });
 
         btnVaiGiochi.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnVaiGiochi.setText("Vai ai Giochi");
+        btnVaiGiochi.setText("Game List");
         btnVaiGiochi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVaiGiochiActionPerformed(evt);
@@ -69,7 +69,7 @@ public class ModeratoreView extends javax.swing.JFrame {
         });
 
         btnListaUtenti.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnListaUtenti.setText("Lista Utenti");
+        btnListaUtenti.setText("Users List");
         btnListaUtenti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListaUtentiActionPerformed(evt);
@@ -77,10 +77,15 @@ public class ModeratoreView extends javax.swing.JFrame {
         });
 
         btnListaRecens.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnListaRecens.setText("Lista recensioni");
+        btnListaRecens.setText("Review List");
+        btnListaRecens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaRecensActionPerformed(evt);
+            }
+        });
 
         btnEsci.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnEsci.setText("Esci");
+        btnEsci.setText("Exit");
         btnEsci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEsciActionPerformed(evt);
@@ -92,33 +97,32 @@ public class ModeratoreView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(btnProfPers, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnProfPers)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnListaUtenti, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(btnVaiGiochi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnProfGaming, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnListaRecens, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(101, 101, 101))
+                    .addComponent(btnListaRecens, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListaUtenti, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnProfGaming, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                            .addComponent(btnVaiGiochi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(286, 286, 286))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(137, 137, 137))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addGap(68, 68, 68)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListaUtenti)
                     .addComponent(btnProfPers))
@@ -181,6 +185,11 @@ public class ModeratoreView extends javax.swing.JFrame {
         this.setVisible(false);
         new UserListView(utente).setVisible(true);
     }//GEN-LAST:event_btnListaUtentiActionPerformed
+
+    private void btnListaRecensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaRecensActionPerformed
+        this.setVisible(false);
+        new ReviewListView(utente).setVisible(true);
+    }//GEN-LAST:event_btnListaRecensActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEsci;

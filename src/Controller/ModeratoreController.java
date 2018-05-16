@@ -166,4 +166,13 @@ public class ModeratoreController extends UtenteController{
         }
         return null;
     }
+    
+    public int NumberOfReview() {
+        try {
+            return new RecensioneDao().CountReview();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
 }

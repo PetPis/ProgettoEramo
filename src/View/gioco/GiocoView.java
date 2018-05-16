@@ -398,20 +398,20 @@ public class GiocoView extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int level = utente.getLivello();
         new UtenteController(utente, gioco).play();
-        JOptionPane.showMessageDialog(rootPane, "Hai giocato!");
+        JOptionPane.showMessageDialog(rootPane, "You Played!","System Message",JOptionPane.INFORMATION_MESSAGE);
         if (utente.getLivello() > level) {
-            JOptionPane.showMessageDialog(rootPane, "Hai Raggiunto un nuovo livello. Hai ottenuto un nuovo trofeo");
+            JOptionPane.showMessageDialog(rootPane, "Congratulations! You reached a new level and achieved a trophy");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ReviewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewBtnActionPerformed
         if (reviewTxt.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "La recensione non può essere vuota", "Recensione vuota", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Review can not be empty", "Empty Review", JOptionPane.ERROR_MESSAGE);
         } else if (reviewTxt.getText().length() > 200) {
-            JOptionPane.showMessageDialog(rootPane, "La recensione puo' essere di massimo 200 caratteri!", "Recensione troppo lunga", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "The max lenght allowed for review is 200 characters", "Too Long Review", JOptionPane.ERROR_MESSAGE);
             reviewTxt.setText("");
         } else {
-            JOptionPane.showMessageDialog(rootPane, new UtenteController(utente, gioco).review("Recensione di " + utente.getUsername() + ":\n" + reviewTxt.getText()));
+            JOptionPane.showMessageDialog(rootPane, new UtenteController(utente, gioco).review("Review of " + utente.getUsername() + ":\n" + reviewTxt.getText()));
             if (!new GiocoController(gioco).allReviews().isEmpty()) {
                 ViewReview.setBackground(null);
             }
@@ -428,7 +428,7 @@ public class GiocoView extends javax.swing.JFrame {
 
     private void ViewReviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewReviewActionPerformed
         if (new GiocoController(gioco).allReviews().isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Non ci sono ancora recensioni per questo gioco!", "No recensioni", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "There are still no reviews for this game", "No Reviews", JOptionPane.ERROR_MESSAGE);
         } else {
             this.setVisible(false);
             new GiocoRecensioniView( utente, gioco).setVisible(true);

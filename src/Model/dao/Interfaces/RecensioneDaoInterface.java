@@ -23,4 +23,6 @@ public interface RecensioneDaoInterface {
     public Recensione findReviewById(int id) throws SQLException;
   
     public Recensione findReviewByUserAndGame(Utente utente, Gioco gioco) throws SQLException;
+    
+    public int CountReview() throws SQLException;
 }
