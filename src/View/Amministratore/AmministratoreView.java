@@ -145,6 +145,7 @@ public class AmministratoreView extends javax.swing.JFrame {
         Welcome.setText("Welcome " +utente.getNome()+ " [A]");
 
         ProfiloPers.setText("Personal Settings");
+        ProfiloPers.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         ProfiloPers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfiloPersActionPerformed(evt);
@@ -152,6 +153,7 @@ public class AmministratoreView extends javax.swing.JFrame {
         });
 
         Games.setText("Edit Games");
+        Games.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Games.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GamesActionPerformed(evt);
@@ -159,6 +161,7 @@ public class AmministratoreView extends javax.swing.JFrame {
         });
 
         UserList.setText("Users List");
+        UserList.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         UserList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserListActionPerformed(evt);
@@ -166,6 +169,7 @@ public class AmministratoreView extends javax.swing.JFrame {
         });
 
         Exit.setText("Exit");
+        Exit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -241,7 +245,7 @@ public class AmministratoreView extends javax.swing.JFrame {
 
     private void GamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GamesActionPerformed
         this.setVisible(false);
-        new ProfiloPersonaleView(utente).setVisible(true);
+        new EditGameView(utente).setVisible(true);
     }//GEN-LAST:event_GamesActionPerformed
 
     private void UserListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserListActionPerformed

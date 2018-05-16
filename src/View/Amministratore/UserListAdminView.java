@@ -177,7 +177,7 @@ public class UserListAdminView extends javax.swing.JFrame {
         });
 
         Back.setText("Back");
-        Demote.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
+        Back.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);

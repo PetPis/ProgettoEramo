@@ -21,7 +21,7 @@ public class GiocoDao implements GiocoDaoInterface{
     INSERT = "INSERT INTO gioco(nome, exp) VALUES (?, ?);";
     
     private static final String
-    DELETE = "DELETE FROM gioco WHERE id = ?;";
+    DELETE = "DELETE FROM gioco WHERE idGioco = ?;";
 
     private static final String
     ALL = "SELECT * FROM gioco ORDER BY nome;";
@@ -48,11 +48,11 @@ public class GiocoDao implements GiocoDaoInterface{
      *@throws SQLException if no database connection is found or another error occurs
     */
     @Override
-    public void insertGame(Gioco gioco) throws SQLException {
+    public void insertGame(String nome,int exp) throws SQLException {
        Connection connection = DB.openConnection();
         PreparedStatement ps = connection.prepareStatement(INSERT);
-        ps.setString(1, gioco.getNome());
-        ps.setInt(2, gioco.getExp());
+        ps.setString(1, nome);
+        ps.setInt(2, exp);
         ps.executeUpdate();
         ps.close();
         connection.close();

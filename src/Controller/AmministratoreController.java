@@ -63,11 +63,8 @@ public class AmministratoreController {
         if (exp > 100) {
             return "Un gioco puo' fornire al massimo 100 punti esperienza!";
         }
-
-        gioco = new Gioco(nome, exp);
-
         try {
-            new GiocoDao().insertGame(gioco);
+            new GiocoDao().insertGame(nome,exp);
             return "Gioco inserito con successo!";
         } catch (SQLException e) {
             return "Gioco gia' esistente.";
