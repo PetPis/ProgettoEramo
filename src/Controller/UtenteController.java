@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import Model.*;
 import Model.DAO.Concrete.RecensioneDao;
 import Model.DAO.Concrete.UtenteDao;
-import Model.dao.Concrete.GiocoDao;
 
 /**
  * Class which represents the controller of MVC pattern for the user
@@ -76,11 +75,11 @@ public class UtenteController {
         try {
             if (new UtenteDao().gameAlreadyVotedByUser(utente, gioco)) {
                 new UtenteDao().updateVote(voto, utente, gioco);
-                return "Voto aggiornato!";
+                return "Vote has been successfully updated!";
             }
 
             new UtenteDao().voteGame(voto, utente, gioco);
-            return "Votazione andata a buon fine!";
+            return "Voted!";
         } catch (SQLException exc) {
             exc.printStackTrace();
         }
@@ -99,16 +98,16 @@ public class UtenteController {
                 new UtenteDao().updateReview(testoRecensione, utente, gioco);
                 if (utente.getTipo().equals("moderatore")) {
                     new UtenteDao().approveReview(new RecensioneDao().findReviewByUserAndGame(utente, gioco));
-                    return "Recensione aggiornata!";
+                    return "Review has been successfully updated!";
                 }
-                return "Recensione aggiornata, dovrete aspettare il consenso di un moderatore!";
+                return "Review updated, a moderator will examine your review!";
             } else {
                 new UtenteDao().reviewGame(testoRecensione, utente, gioco);
                 if (utente.getTipo().equals("moderatore")) {
                     new UtenteDao().approveReview(new RecensioneDao().findReviewByUserAndGame(utente, gioco));
-                    return "Recensione inserita!";
+                    return "Review added!";
                 }
-                return "Recensione inviata, dovrete aspettare il consenso di un moderatore.";
+                return "Review sent, a moderator will examine your review!.";
             }
         } catch (SQLException exc) {
             exc.printStackTrace();

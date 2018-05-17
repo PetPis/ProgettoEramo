@@ -233,6 +233,7 @@ public class GiocoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initComps(){
+        this.setLocation(650,300);
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();

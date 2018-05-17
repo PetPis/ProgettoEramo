@@ -111,6 +111,7 @@ public class EditGameView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initComps() {
+        this.setLocation(650,300);
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();

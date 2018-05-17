@@ -108,9 +108,9 @@ public class GameListUtente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HomeBtn)
-                    .addComponent(HomeBtn1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(HomeBtn1)
+                    .addComponent(HomeBtn))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -118,6 +118,7 @@ public class GameListUtente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initComps(){
+        this.setLocation(650,300);
         jLabel1 = new javax.swing.JLabel();
         HomeBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();

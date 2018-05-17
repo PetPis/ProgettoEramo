@@ -78,7 +78,7 @@ public class ModeratoreController extends UtenteController{
     public String promote() {
         try {
             new UtenteDao().promoteUser(utente);
-            return "Promozione andata a buon fine.";
+            return "Promodet Successfully.";
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -93,7 +93,7 @@ public class ModeratoreController extends UtenteController{
     public String demote() {
         try {
             new UtenteDao().demoteUser(utente);
-            return "Retrocessione andata a buon fine.";
+            return "Demoted  Successfully.";
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,7 +108,7 @@ public class ModeratoreController extends UtenteController{
     public String approve() {
         try {
             new UtenteDao().approveReview(recensione);
-            return "Recensione approvata.";
+            return "Review approved.";
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -123,7 +123,7 @@ public class ModeratoreController extends UtenteController{
     public String disapprove() {
         try {
             new UtenteDao().disapproveReview(recensione);
-            return "Recensione respinta.";
+            return "Review disapproved.";
         } catch (SQLException e) {
             e.printStackTrace();
         }

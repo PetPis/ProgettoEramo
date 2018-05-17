@@ -121,68 +121,68 @@ public class GestioneUtenza {
 
                 case "nome":
                     if (newValue.trim().isEmpty()) {
-                        return "Il nome non puo' essere vuoto!";
+                        return "Name can't be empty!";
                     }
                     if (newValue.length() > 30) {
-                        return "Il nome non deve superare i 30 caratteri!";
+                        return "Name can't be longer then 30 chars!";
                     }
                     if (utente != null) {
                         new UtenteDao().updateUser(column, newValue, utente);
                         utente.setNome(newValue);
                     }
-                    return "Nome aggiornato!";
+                    return "Name has been successfully updated!";
 
                 case "cognome":
                     if (newValue.trim().isEmpty()) {
-                        return "Il nome non puo' essere vuoto!";
+                        return "Surname can't be empty!!";
                     }
                     if (newValue.length() > 30) {
-                        return "Il cognome non deve superare i 30 caratteri!";
+                        return "Surname can't be longer then 30 chars!";
                     }
                     if (utente != null) {
                         new UtenteDao().updateUser(column, newValue, utente);
                         utente.setCognome(newValue);
                     }
-                    return "Cognome aggiornato!";
+                    return "Surname has been successfully updated";
 
                 case "username":
                     if (newValue.trim().isEmpty()) {
-                        return "Lo username non puo' essere vuoto!";
+                        return "Username can't be empty!";
                     }
                     if (newValue.length() > 30) {
-                        return "Lo username non deve superare i 30 caratteri!";
+                        return "Username can't be longer then 30 chars!";
                     }
                     if (new UtenteDao().usernameAlreadyUsed(newValue)) {
-                        return "Username gia' in uso!";
+                        return "Username already used!";
                     }
                     if (utente != null) {
                         new UtenteDao().updateUser(column, newValue, utente);
                         utente.setUsername(newValue);
                     }
-                    return "Username aggiornato!";
+                    return "Username has been successfully update!";
 
                 case "email":
                     if (newValue.trim().isEmpty()) {
-                        return "L'email non puo' essere vuota!";
+                        return "E-Mail can't be empty!";
                     }
                     if (newValue.length() > 45) {
-                        return "L'email non deve superare i 45 caratteri!";
+                        return "E-Mail can't be longer then 45 chars!";
                     }
 
                     Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[\\w!#$%&Ã¢â‚¬â„¢*+/=?`{|}~^-]+(?:\\.[\\w!#$%&Ã¢â‚¬â„¢*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
                     Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(newValue);
 
                     if (new UtenteDao().emailAlreadyUsed(newValue)) {
-                        return "Email gia' in uso!";
+                        return "E-mail already used!";
                     }
                     if (!matcher.find()) {
-                        return "Email non valida!";
+                        return "Invalid E-Mail!";
                     }
                     if (utente != null) {
                         new UtenteDao().updateUser(column, newValue, utente);
                         utente.setEmail(newValue);
                     }
-                    return "Email aggiornata!";
+                    return "Email has been successfully updated!";
 
             }
         } catch (SQLException e) {
@@ -203,25 +203,25 @@ public class GestioneUtenza {
      */
     public String updateValue(String column, String nuova_password, String conferma_password, Utente utente) {
         if (nuova_password.trim().isEmpty()) {
-            return "La password non puo' essere vuota!";
+            return "Password can't be empty";
         }
 
         if (nuova_password.length() > 30) {
-            return "Lo password non deve superare i 30 caratteri!";
+            return "E-Password can't be longer then 45 chars!";
         }
 
         if (nuova_password.length() < 8) {
-            return "La password deve essere di minimo 8 caratteri!";
+            return "Password can't be shorted then 8 chars!";
         }
 
         if (!nuova_password.equals(conferma_password)) {
-            return "Le due password non coincidono!";
+            return "Passwords must coincide!";
         }
 
         try {
             new UtenteDao().updateUser(column, nuova_password, utente);
             utente.setPassword(nuova_password);
-            return "Password aggiornata!";
+            return "Password has been successfully updated!";
         } catch (SQLException e) {
             e.printStackTrace();
         }

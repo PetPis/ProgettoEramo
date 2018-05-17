@@ -61,13 +61,13 @@ public class AmministratoreController {
      */
     public String insertGame(String nome, int exp) {
         if (exp > 100) {
-            return "Un gioco puo' fornire al massimo 100 punti esperienza!";
+            return "A game can't give more then 100exp";
         }
         try {
             new GiocoDao().insertGame(nome,exp);
-            return "Gioco inserito con successo!";
+            return "Game has been successfully added!";
         } catch (SQLException e) {
-            return "Gioco gia' esistente.";
+            return "Game already exists!.";
         }
     }
 
@@ -79,7 +79,7 @@ public class AmministratoreController {
     public String deleteGame() {
         try {
             new GiocoDao().deleteGame(gioco);
-            return "Gioco eliminato con successo!";
+            return "Game has been successfully deleted !";
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -94,7 +94,7 @@ public class AmministratoreController {
     public String deleteUser() {
         try {
             new UtenteDao().deleteUser(utente_target);
-            return "Utente eliminato con successo!";
+            return "User has been successfully deleted!";
         } catch (SQLException e) {
             e.printStackTrace();
         }

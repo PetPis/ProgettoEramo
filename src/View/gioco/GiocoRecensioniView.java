@@ -90,6 +90,7 @@ public class GiocoRecensioniView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initComps() {
+        this.setLocation(650,300);
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();

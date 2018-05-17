@@ -244,6 +244,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificaActionPerformed
 
     private void initComps() {
+        this.setLocation(650,300);
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();

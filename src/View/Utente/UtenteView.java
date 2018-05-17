@@ -132,6 +132,7 @@ public class UtenteView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     private void InitComps(){
+        this.setLocation(650,300);
          jPanel1 = new javax.swing.JPanel();
         Welcome = new javax.swing.JLabel();
         ProfiloPers = new javax.swing.JButton();

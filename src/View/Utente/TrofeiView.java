@@ -171,6 +171,7 @@ class TrofeiView extends javax.swing.JFrame {
     }//GEN-LAST:event_IndietroBtnActionPerformed
 
     private void InitComps() {
+        this.setLocation(650,300);
         jPanel1 = new javax.swing.JPanel();
         IndietroBtn = new javax.swing.JButton();
         AvantiBtn = new javax.swing.JButton();
