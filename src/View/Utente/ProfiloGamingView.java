@@ -23,6 +23,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
 
     /**
      * Creates new form ProfiloGamingView
+     * @param utente current user
      */
     public ProfiloGamingView(Utente utente) {
         this.utente = utente;

@@ -19,6 +19,7 @@ public class EditGameView extends javax.swing.JFrame {
 
     /**
      * Creates new form EditGameView
+     * @param utente current user
      */
     public EditGameView(Utente utente) {
         this.utente = utente;

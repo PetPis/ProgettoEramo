@@ -48,11 +48,11 @@ public class GiocoDao implements GiocoDaoInterface{
      *@throws SQLException if no database connection is found or another error occurs
     */
     @Override
-    public void insertGame(String nome,int exp) throws SQLException {
+    public void insertGame(Gioco gioco) throws SQLException {
        Connection connection = DB.openConnection();
         PreparedStatement ps = connection.prepareStatement(INSERT);
-        ps.setString(1, nome);
-        ps.setInt(2, exp);
+        ps.setString(1, gioco.getNome());
+        ps.setInt(2, gioco.getExp());
         ps.executeUpdate();
         ps.close();
         connection.close();

@@ -13,6 +13,7 @@ public class UtenteView extends javax.swing.JFrame {
 
     /**
      * Creates new form UtenteView
+     * @param utente current user
      */
     public UtenteView(Utente utente) {
         this.utente = utente;

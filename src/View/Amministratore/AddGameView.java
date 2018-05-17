@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
 public class AddGameView extends javax.swing.JFrame {
     private Utente utente;
     /**
-     * Creates new form AggiungiGiocoVie
+     * Creates new form AggiungiGiocoView
+     * @param utente current user
      */
     public AddGameView(Utente utente) {
         this.utente = utente;

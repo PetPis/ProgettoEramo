@@ -18,6 +18,7 @@ public class UserListView extends javax.swing.JFrame {
 
     /**
      * Creates new form UserListView
+     * @param utente current user
      */
     public UserListView(Utente utente) {
         this.utente = utente;

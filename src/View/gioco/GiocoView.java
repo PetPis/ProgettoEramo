@@ -26,7 +26,9 @@ public class GiocoView extends javax.swing.JFrame {
     Utente utente;
 
     /**
-     * Creates new form GiocoVie
+     * Creates new form GiocoView
+     * @param utente current user
+     * @param gioco current game
      */
     public GiocoView(Gioco gioco, Utente utente) {
         this.gioco = gioco;

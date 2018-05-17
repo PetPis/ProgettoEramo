@@ -19,6 +19,7 @@ public class GameListUtente extends javax.swing.JFrame {
 
     /**
      * Creates new form GameListUtente
+     * @param utente current user
      */
     public GameListUtente(Utente utente) {
         this.utente = utente;
@@ -229,9 +230,6 @@ public class GameListUtente extends javax.swing.JFrame {
         new GiocoView(toGame,utente).setVisible(true);
     }//GEN-LAST:event_HomeBtn1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton HomeBtn;
     private javax.swing.JButton HomeBtn1;

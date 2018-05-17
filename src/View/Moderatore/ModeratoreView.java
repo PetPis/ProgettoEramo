@@ -14,7 +14,8 @@ import View.Utente.ProfiloPersonaleView;
 public class ModeratoreView extends javax.swing.JFrame {
     private Utente utente;
     /**
-     * Creates new form ModeratoreVie
+     * Creates new form ModeratoreView
+     * @param utente current user
      */
     public ModeratoreView(Utente utente) {
         this.utente=utente;

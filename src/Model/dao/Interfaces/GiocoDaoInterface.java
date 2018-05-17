@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *Interface that defines the standard operations to be performed on a Gioco model object
  */
 public interface GiocoDaoInterface {
-    public void insertGame(String nome, int exp) throws SQLException;
+    public void insertGame(Gioco gioco) throws SQLException;
   
     public void deleteGame(Gioco gioco) throws SQLException;
   

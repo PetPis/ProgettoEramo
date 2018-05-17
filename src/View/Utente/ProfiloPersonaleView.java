@@ -19,6 +19,7 @@ public class ProfiloPersonaleView extends javax.swing.JFrame {
 
     /**
      * Creates new form ProfiloPersonaleView
+     * @param utente current user
      */
     public ProfiloPersonaleView(Utente utente) {
         this.utente = utente;

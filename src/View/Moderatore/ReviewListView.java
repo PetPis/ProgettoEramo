@@ -18,6 +18,7 @@ public class ReviewListView extends javax.swing.JFrame {
 
     /**
      * Creates new form ReviewListView
+     * @param utente current user
      */
     public ReviewListView(Utente utente) {
         this.utente = utente;

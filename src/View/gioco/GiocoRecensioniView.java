@@ -18,6 +18,8 @@ public class GiocoRecensioniView extends javax.swing.JFrame {
 
     /**
      * Creates new form GiocoRecensioniVie
+     * @param utente current user
+     * @param gioco current game
      */
     public GiocoRecensioniView(Utente utente, Gioco gioco) {
         this.utente = utente;

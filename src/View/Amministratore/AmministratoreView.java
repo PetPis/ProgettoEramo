@@ -14,7 +14,8 @@ public class AmministratoreView extends javax.swing.JFrame {
     private Utente utente;
 
     /**
-     * Creates new form AmministratoreVie
+     * Creates new form AmministratoreView
+     * @param utente current user
      */
     public AmministratoreView(Utente utente) {
         this.utente = utente;

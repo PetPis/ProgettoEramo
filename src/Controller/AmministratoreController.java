@@ -63,8 +63,9 @@ public class AmministratoreController {
         if (exp > 100) {
             return "A game can't give more then 100exp";
         }
+        gioco = new Gioco(nome,exp);
         try {
-            new GiocoDao().insertGame(nome,exp);
+            new GiocoDao().insertGame(gioco);
             return "Game has been successfully added!";
         } catch (SQLException e) {
             return "Game already exists!.";
