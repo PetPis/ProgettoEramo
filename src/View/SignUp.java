@@ -45,6 +45,7 @@ public class SignUp extends javax.swing.JFrame {
         PasswordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gaming Platform");
 
         textField_2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
 
@@ -193,7 +194,7 @@ public class SignUp extends javax.swing.JFrame {
 
     private void initComps(){
         this.setLocation(650,300);
-          jPanel1 = new javax.swing.JPanel();
+           jPanel1 = new javax.swing.JPanel();
         textField_2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -211,6 +212,7 @@ public class SignUp extends javax.swing.JFrame {
         PasswordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gaming Platform");
 
         textField_2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
 
@@ -244,7 +246,7 @@ public class SignUp extends javax.swing.JFrame {
         textField_3.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setText("Registrazione");
+        jLabel1.setText("Register");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel2.setText("Surname");
