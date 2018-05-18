@@ -120,7 +120,7 @@ public class UserListAdminView extends javax.swing.JFrame {
                         .addComponent(Demote)
                         .addComponent(Delete))
                     .addComponent(Back))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
