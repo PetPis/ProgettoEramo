@@ -85,7 +85,7 @@
 ## Contacts
 
  - marco.pistilli@student.univaq.it
- - davide.petrini1@student.univa.it
+ - davide.petrini1@student.univaq.it
 
 
 ## License
