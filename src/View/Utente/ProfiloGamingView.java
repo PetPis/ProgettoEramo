@@ -19,10 +19,10 @@ import javax.swing.JTable;
 public class ProfiloGamingView extends javax.swing.JFrame {
 
     private Utente utente;
-    
 
     /**
      * Creates new form ProfiloGamingView
+     *
      * @param utente current user
      */
     public ProfiloGamingView(Utente utente) {
@@ -206,7 +206,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void InitComps() {
-        this.setLocation(650,300);
+        this.setLocation(650, 300);
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -223,6 +223,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gaming Platform");
 
         GetUsername = new JLabel(utente.getUsername());
         GetLivello = new JLabel(" " + utente.getLivello());
@@ -242,10 +243,10 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         jLabel3.setText("Level:");
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel4.setText("Exp:");
+        jLabel4.setText("Exp :");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jLabel5.setText("Trophies:");
+        jLabel5.setText("Trophies : ");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel6.setText("Timeline:");
@@ -355,7 +356,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 525, Short.MAX_VALUE)
+                        .addGap(0, 600, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
@@ -364,7 +365,7 @@ public class ProfiloGamingView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 453, Short.MAX_VALUE)
+                        .addGap(0, 450, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
@@ -376,20 +377,19 @@ public class ProfiloGamingView extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(utente.getTipo().equals( "moderatore")){
+        if (utente.getTipo().equals("moderatore")) {
             this.setVisible(false);
             new ModeratoreView(utente).setVisible(true);
-        }else{
-        this.setVisible(false);
-        new UtenteView(utente).setVisible(true);
+        } else {
+            this.setVisible(false);
+            new UtenteView(utente).setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TrofeiViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrofeiViewActionPerformed
         if (utente.getLivello() < 1) {
             JOptionPane.showMessageDialog(rootPane, "you have not collected trophies yet", "No Trophies", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        } else {
             this.setVisible(false);
             new TrofeiView(utente).setVisible(true);
         }

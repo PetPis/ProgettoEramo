@@ -18,6 +18,7 @@ public class UserListView extends javax.swing.JFrame {
 
     /**
      * Creates new form UserListView
+     *
      * @param utente current user
      */
     public UserListView(Utente utente) {
@@ -112,7 +113,7 @@ public class UserListView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initComps() {
-        this.setLocation(650,300);
+        this.setLocation(650, 300);
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         userList = new javax.swing.JList<>();
@@ -121,14 +122,17 @@ public class UserListView extends javax.swing.JFrame {
         Demote = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        setTitle("Gaming Platform");
         List<Utente> lU = new ModeratoreController().usersList();
         int n = new ModeratoreController().NumberOfUsers();
         String[] jl = new String[n];
         int i = 0;
         for (Utente g : lU) {
-                 jl[i] = g.getUsername();
-            i++;
+            if(g.getUsername().equals(this.utente.getUsername())) jl[i] = "";
+            else{jl[i] = g.getUsername();
+            if ( g.getTipo().equals("moderatore")) jl[i]+= " [M]";
+            i++;}
+                   
         }
         userList = new JList(jl);
 
@@ -137,24 +141,24 @@ public class UserListView extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(userList);
 
+        Promote.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Promote.setText("Promote");
-        Promote.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         Promote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PromoteActionPerformed(evt);
             }
         });
 
+        Back.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Back.setText("Back");
-        Back.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
 
+        Demote.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         Demote.setText("Demote");
-        Demote.setFont(new java.awt.Font("Comic Sans MS", 0, 16));
         Demote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DemoteActionPerformed(evt);
@@ -168,38 +172,33 @@ public class UserListView extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGap(52, 52, 52)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGap(212, 212, 212)
-                                                                .addComponent(jLabel1))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addContainerGap()
                                                                 .addComponent(Promote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(0, 0, 0)
-                                                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 197, Short.MAX_VALUE))
+                                                                .addComponent(Demote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(162, 162, 162)
+                                                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addContainerGap())
+                                                .addGap(241, 241, 241)
+                                                .addComponent(jLabel1)))
+                                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(31, 31, 31)
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Promote)
                                         .addComponent(Back)
+                                        .addComponent(Promote)
                                         .addComponent(Demote))
-                                .addContainerGap(47, Short.MAX_VALUE))
+                                .addGap(48, 48, 48))
         );
 
         pack();
@@ -214,12 +213,15 @@ public class UserListView extends javax.swing.JFrame {
         if (userList.getSelectedValue() == null) {
             JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
         } else {
-            Utente utente = new GestioneUtenza().findUser(userList.getSelectedValue());
+            String[] GetId = userList.getSelectedValue().split(" ");
+            Utente utente = new GestioneUtenza().findUser(GetId[0]);
             if (utente.getTipo().equals("moderatore")) {
                 JOptionPane.showMessageDialog(rootPane, "The user is already a moderator");
             } else {
                 new ModeratoreController(utente).promote();
                 JOptionPane.showMessageDialog(rootPane, "User Promoted!");
+                this.setVisible(false);
+                new UserListView(utente).setVisible(true);
             }
         }
     }//GEN-LAST:event_PromoteActionPerformed
@@ -228,12 +230,15 @@ public class UserListView extends javax.swing.JFrame {
         if (userList.getSelectedValue() == null) {
             JOptionPane.showMessageDialog(rootPane, "Select one review", "Selection Failed", JOptionPane.ERROR_MESSAGE);
         } else {
-            Utente utente = new GestioneUtenza().findUser(userList.getSelectedValue());
+           String[] GetId = userList.getSelectedValue().split(" ");
+            Utente utente = new GestioneUtenza().findUser(GetId[0]);
             if (utente.getTipo().equals("utente")) {
                 JOptionPane.showMessageDialog(rootPane, "The user can not be demoted under user type");
             } else {
                 new ModeratoreController(utente).demote();
                 JOptionPane.showMessageDialog(rootPane, "User Demoted!");
+                this.setVisible(false);
+                new UserListView(utente).setVisible(true);
             }
         }
     }//GEN-LAST:event_DemoteActionPerformed
