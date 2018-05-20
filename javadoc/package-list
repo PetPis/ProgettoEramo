@@ -1,0 +1,11 @@
+Controller
+Model
+Model.DAO.Concrete
+Model.DAO.Interfaces
+Model.Database
+Model.dao.Concrete
+View
+View.Amministratore
+View.Moderatore
+View.Utente
+View.gioco
