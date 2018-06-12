@@ -148,7 +148,6 @@ public class UserListAdminView extends javax.swing.JFrame {
             jl[i] = g.getUsername();
             if ( g.getTipo().equals("moderatore")) jl[i]+= " [M]";
             i++;
-            i++;
         }
         jList1 = new JList(jl);
 
